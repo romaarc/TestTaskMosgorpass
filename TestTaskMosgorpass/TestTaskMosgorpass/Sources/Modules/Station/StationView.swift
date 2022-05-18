@@ -28,7 +28,7 @@ final class StationView: UIView {
 
 extension StationView: ProgrammaticallyInitializableViewProtocol {
     func setupView() {
-        backgroundColor = .yellow
+        backgroundColor = .white
     }
 
     func addSubviews() { }

@@ -15,6 +15,9 @@
 		A482ED8472E93148A5F2DBBE /* StationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B5AA1DB069D316CEB120B /* StationInteractor.swift */; };
 		AD375957B4276291DB21E803 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81CBD655902ACB9A89C4605 /* StationViewController.swift */; };
 		B4A71B481A3C2DC995C45060 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C33A4F1B4AC1F553133BE9 /* StationProvider.swift */; };
+		BB36B61D28358A4400930413 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B61C28358A4400930413 /* Colors.swift */; };
+		BB36B61F28358A7900930413 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B61E28358A7900930413 /* UIColor+Extension.swift */; };
+		BB36B62128358AA700930413 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B62028358AA700930413 /* Font.swift */; };
 		BBCD71C428357AB00000F355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD71C328357AB00000F355 /* AppDelegate.swift */; };
 		BBCD71C628357AB00000F355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD71C528357AB00000F355 /* SceneDelegate.swift */; };
 		BBCD71CD28357AB20000F355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCD71CC28357AB20000F355 /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		875891380C4A7FC77AECDFD8 /* StationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
 		8A712CD3266AE55C9FB80495 /* StationInputProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInputProtocol.swift; sourceTree = "<group>"; };
 		B6EAD14E8D1E125E2078A1EC /* StationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationPresenter.swift; sourceTree = "<group>"; };
+		BB36B61C28358A4400930413 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		BB36B61E28358A7900930413 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		BB36B62028358AA700930413 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BBCD71C028357AB00000F355 /* TestTaskMosgorpass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskMosgorpass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCD71C328357AB00000F355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBCD71C528357AB00000F355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -298,6 +304,8 @@
 		BBCD720328357C320000F355 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				BB36B61E28358A7900930413 /* UIColor+Extension.swift */,
+				BB36B62028358AA700930413 /* Font.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -322,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				BBCD720B28357DDD0000F355 /* Localize.swift */,
+				BB36B61C28358A4400930413 /* Colors.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -495,6 +504,7 @@
 				BBCD720C28357DDD0000F355 /* Localize.swift in Sources */,
 				BBCD7225283581C30000F355 /* Response.swift in Sources */,
 				BBCD7223283581990000F355 /* URLFactory.swift in Sources */,
+				BB36B61D28358A4400930413 /* Colors.swift in Sources */,
 				BBCD71FC28357C000000F355 /* AppCoordinator.swift in Sources */,
 				BBCD7215283580390000F355 /* API.swift in Sources */,
 				BBCD71FE28357C090000F355 /* AppDependency.swift in Sources */,
@@ -511,6 +521,8 @@
 				38B366F2E053121C494E27DE /* StationDataFlow.swift in Sources */,
 				B4A71B481A3C2DC995C45060 /* StationProvider.swift in Sources */,
 				1B6BDB6E5BD4F00B8C7F7DD8 /* StationView.swift in Sources */,
+				BB36B62128358AA700930413 /* Font.swift in Sources */,
+				BB36B61F28358A7900930413 /* UIColor+Extension.swift in Sources */,
 				8FA54BF23EB3C88D5BCB17F8 /* StationInputProtocol.swift in Sources */,
 				13973BB84A516A062D90FCE8 /* StationOutputProtocol.swift in Sources */,
 			);

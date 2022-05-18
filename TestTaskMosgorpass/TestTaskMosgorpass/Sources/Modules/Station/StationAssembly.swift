@@ -10,7 +10,10 @@ final class StationAssembly: Assembly {
     }
 
     func makeModule(with context: ModuleContext?) -> UIViewController {
-        let provider = StationProvider()
+        guard let context = context else { return UIViewController() }
+        let provider = StationProvider(
+            mosgorpassNetworkService: context.moduleDependencies.mosgorpassNetworkService
+        )
         let presenter = StationPresenter()
         let interactor = StationInteractor(presenter: presenter, provider: provider)
         let viewController = StationViewController(interactor: interactor)

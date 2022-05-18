@@ -1,7 +1,7 @@
 import UIKit
 
 protocol StationViewControllerProtocol: AnyObject {
-    func displaySomeActionResult(viewModel: StationLoad.SomeAction.ViewModel)
+    func displayStations(viewModel: StationLoad.Loading.ViewModel)
 }
 
 final class StationViewController: UIViewController {
@@ -21,8 +21,15 @@ final class StationViewController: UIViewController {
         let view = StationView(frame: UIScreen.main.bounds)
         self.view = view
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        interactor.doStationsUpdate(request: .init())
+    }
 }
 
 extension StationViewController: StationViewControllerProtocol {
-    func displaySomeActionResult(viewModel: StationLoad.SomeAction.ViewModel) { }
+    func displayStations(viewModel: StationLoad.Loading.ViewModel) {
+        
+    }
 }

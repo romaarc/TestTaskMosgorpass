@@ -1,11 +1,18 @@
 import Foundation
 
 enum StationLoad {
-    enum SomeAction {
-        struct Request { }
-
-        struct Response { }
-
-        struct ViewModel { }
+    ///Show stations data
+    enum Loading {
+        struct Response {
+            let result: Result<[Station], Error>
+        }
+        
+        struct ViewModel {
+            let data: [StationViewModel]
+        }
+    }
+    /// Update stations
+    enum StationUpdate {
+        struct Request {}
     }
 }

@@ -2,7 +2,7 @@ import Foundation
 import PromiseKit
 
 protocol StationInteractorProtocol {
-    func doSomeAction(request: StationLoad.SomeAction.Request)
+    func doStationsUpdate(request: StationLoad.StationUpdate.Request)
 }
 
 final class StationInteractor: StationInteractorProtocol {
@@ -19,10 +19,16 @@ final class StationInteractor: StationInteractorProtocol {
         self.provider = provider
     }
 
-    func doSomeAction(request: StationLoad.SomeAction.Request) { }
+    func doStationsUpdate(request: StationLoad.StationUpdate.Request) {
+        provider.fetch().done { stations in
+            self.presenter.presentStationsResult(response: .init(result: .success(stations)))
+        }.catch { _ in
+            self.presenter.presentStationsResult(response: .init(result: .failure(Error.unloadable)))
+        }
+    }
 
     enum Error: Swift.Error {
-        case something
+        case unloadable
     }
 }
 

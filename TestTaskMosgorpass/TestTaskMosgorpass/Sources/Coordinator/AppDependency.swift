@@ -8,7 +8,7 @@
 import Foundation
 
 protocol HasDependencies {
-    var mapNetworkService: NetworkServiceProtocol { get }
+    var mosgorpassNetworkService: NetworkServiceProtocol { get }
 }
 
 ///class AppDependency - зависимость контейнер с сервисами, для передачи в модули VIP
@@ -26,7 +26,7 @@ final class AppDependency {
 }
 
 extension AppDependency: HasDependencies {
-    var mapNetworkService: NetworkServiceProtocol {
+    var mosgorpassNetworkService: NetworkServiceProtocol {
         return self.networkService
     }
 }

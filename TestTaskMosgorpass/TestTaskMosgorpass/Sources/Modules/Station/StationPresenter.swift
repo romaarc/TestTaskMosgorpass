@@ -6,7 +6,7 @@ protocol StationPresenterProtocol {
 
 final class StationPresenter: StationPresenterProtocol {
     weak var viewController: StationViewControllerProtocol?
-
+    
     func presentStationsResult(response: StationLoad.Loading.Response) {
         switch response.result {
         case .success(let result):

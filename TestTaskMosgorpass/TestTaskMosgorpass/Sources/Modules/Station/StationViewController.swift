@@ -6,17 +6,21 @@ protocol StationViewControllerProtocol: AnyObject {
 
 final class StationViewController: UIViewController {
     private let interactor: StationInteractorProtocol
-
+    
+    var stationView: StationView? { self.view as? StationView }
+    
+    private var collectionViewAdapter = StationCollectionViewAdapter()
+    
     init(interactor: StationInteractorProtocol) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
-
+    
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func loadView() {
         let view = StationView(frame: UIScreen.main.bounds)
         self.view = view
@@ -24,12 +28,34 @@ final class StationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor.doStationsUpdate(request: .init())
+        collectionViewAdapter.delegate = self
+        fetch()
     }
 }
 
 extension StationViewController: StationViewControllerProtocol {
-    func displayStations(viewModel: StationLoad.Loading.ViewModel) {
-        
+    func fetch() {
+        interactor.doStationsUpdate(request: .init())
     }
+    
+    func displayStations(viewModel: StationLoad.Loading.ViewModel) {
+        guard let stationView = stationView else { return }
+        collectionViewAdapter.components = viewModel.data
+        collectionViewAdapter.boundsWidth = stationView.bounds.width
+        stationView.activityIndicator.startAnimating()
+        DispatchQueue.main.async {
+            stationView.updateCollectionViewData(
+                delegate: self.collectionViewAdapter,
+                dataSource: self.collectionViewAdapter)
+        }
+    }
+}
+
+// MARK: - StationViewController: StationCollectionViewAdapterDelegate -
+extension StationViewController: StationCollectionViewAdapterDelegate {
+    func stationCollectionViewAdapter(
+        _ adapter: StationCollectionViewAdapter,
+        didSelectComponentAt indexPath: IndexPath) {
+            
+        }
 }

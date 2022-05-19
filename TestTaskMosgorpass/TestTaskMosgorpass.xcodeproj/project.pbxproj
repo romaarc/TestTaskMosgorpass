@@ -19,6 +19,13 @@
 		BB36B61F28358A7900930413 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B61E28358A7900930413 /* UIColor+Extension.swift */; };
 		BB36B62128358AA700930413 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B62028358AA700930413 /* Font.swift */; };
 		BB36B624283590C300930413 /* StationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B623283590C300930413 /* StationViewModel.swift */; };
+		BB678E48283637FE0080968E /* StationCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E47283637FE0080968E /* StationCollectionViewAdapter.swift */; };
+		BB678E4D28363A680080968E /* BaseUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E4C28363A680080968E /* BaseUICollectionViewCell.swift */; };
+		BB678E4F28363AC30080968E /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E4E28363AC30080968E /* StationCell.swift */; };
+		BB678E5128363C0F0080968E /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E5028363C0F0080968E /* GlobalConstants.swift */; };
+		BB678E5328363C930080968E /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E5228363C930080968E /* UILabel+Extension.swift */; };
+		BB678E5528363D1B0080968E /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E5428363D1B0080968E /* ReuseIdentifier.swift */; };
+		BB678E572836425E0080968E /* StationViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E562836425E0080968E /* StationViewProtocol.swift */; };
 		BBCD71C428357AB00000F355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD71C328357AB00000F355 /* AppDelegate.swift */; };
 		BBCD71C628357AB00000F355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD71C528357AB00000F355 /* SceneDelegate.swift */; };
 		BBCD71CD28357AB20000F355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCD71CC28357AB20000F355 /* Assets.xcassets */; };
@@ -42,7 +49,7 @@
 		BBCD72212835817D0000F355 /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD72202835817D0000F355 /* NetworkServiceProtocol.swift */; };
 		BBCD7223283581990000F355 /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD7222283581990000F355 /* URLFactory.swift */; };
 		BBCD7225283581C30000F355 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD7224283581C30000F355 /* Response.swift */; };
-		BBCD7227283582630000F355 /* Stations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD7226283582630000F355 /* Stations.swift */; };
+		BBCD7227283582630000F355 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD7226283582630000F355 /* Station.swift */; };
 		EC81172823A2242F69299E2C /* StationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EAD14E8D1E125E2078A1EC /* StationPresenter.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +82,13 @@
 		BB36B61E28358A7900930413 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BB36B62028358AA700930413 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BB36B623283590C300930413 /* StationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewModel.swift; sourceTree = "<group>"; };
+		BB678E47283637FE0080968E /* StationCollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCollectionViewAdapter.swift; sourceTree = "<group>"; };
+		BB678E4C28363A680080968E /* BaseUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUICollectionViewCell.swift; sourceTree = "<group>"; };
+		BB678E4E28363AC30080968E /* StationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
+		BB678E5028363C0F0080968E /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		BB678E5228363C930080968E /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		BB678E5428363D1B0080968E /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
+		BB678E562836425E0080968E /* StationViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewProtocol.swift; sourceTree = "<group>"; };
 		BBCD71C028357AB00000F355 /* TestTaskMosgorpass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskMosgorpass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCD71C328357AB00000F355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBCD71C528357AB00000F355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,7 +114,7 @@
 		BBCD72202835817D0000F355 /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
 		BBCD7222283581990000F355 /* URLFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFactory.swift; sourceTree = "<group>"; };
 		BBCD7224283581C30000F355 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		BBCD7226283582630000F355 /* Stations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stations.swift; sourceTree = "<group>"; };
+		BBCD7226283582630000F355 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		C81CBD655902ACB9A89C4605 /* StationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		CD7C02E5C3D07ABA3EECC950 /* StationDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationDataFlow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,9 +159,42 @@
 			isa = PBXGroup;
 			children = (
 				875891380C4A7FC77AECDFD8 /* StationView.swift */,
-				BB36B623283590C300930413 /* StationViewModel.swift */,
+				BB678E47283637FE0080968E /* StationCollectionViewAdapter.swift */,
+				BB678E562836425E0080968E /* StationViewProtocol.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BB678E462836379D0080968E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BB36B623283590C300930413 /* StationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BB678E49283639C60080968E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BB678E4E28363AC30080968E /* StationCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BB678E4A28363A3D0080968E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BB678E4B28363A4B0080968E /* Cell */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		BB678E4B28363A4B0080968E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BB678E4C28363A680080968E /* BaseUICollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		BBCD71B728357AB00000F355 = {
@@ -271,7 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				BBCD7224283581C30000F355 /* Response.swift */,
-				BBCD7226283582630000F355 /* Stations.swift */,
+				BBCD7226283582630000F355 /* Station.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,6 +326,7 @@
 		BBCD71FF28357C0E0000F355 /* VIP */ = {
 			isa = PBXGroup;
 			children = (
+				BB678E4A28363A3D0080968E /* UI */,
 				BBCD720028357C120000F355 /* Protocols */,
 			);
 			path = VIP;
@@ -317,6 +365,8 @@
 			children = (
 				BB36B61E28358A7900930413 /* UIColor+Extension.swift */,
 				BB36B62028358AA700930413 /* Font.swift */,
+				BB678E5228363C930080968E /* UILabel+Extension.swift */,
+				BB678E5428363D1B0080968E /* ReuseIdentifier.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -340,8 +390,9 @@
 		BBCD720628357D1E0000F355 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				BBCD720B28357DDD0000F355 /* Localize.swift */,
 				BB36B61C28358A4400930413 /* Colors.swift */,
+				BB678E5028363C0F0080968E /* GlobalConstants.swift */,
+				BBCD720B28357DDD0000F355 /* Localize.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -357,6 +408,8 @@
 		F7ED6A24F4371EA23C5150DE /* Station */ = {
 			isa = PBXGroup;
 			children = (
+				BB678E49283639C60080968E /* Cell */,
+				BB678E462836379D0080968E /* ViewModel */,
 				BB36B622283590AD00930413 /* View */,
 				27A09F61C071FC54871B4B87 /* StationAssembly.swift */,
 				C81CBD655902ACB9A89C4605 /* StationViewController.swift */,
@@ -509,6 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB678E4F28363AC30080968E /* StationCell.swift in Sources */,
 				BBCD721D283581180000F355 /* NetworkService.swift in Sources */,
 				BBCD721028357E4B0000F355 /* ProgrammaticallyInitializableViewProtocol.swift in Sources */,
 				BBCD721328357E890000F355 /* Typealias.swift in Sources */,
@@ -519,11 +573,12 @@
 				BBCD71FC28357C000000F355 /* AppCoordinator.swift in Sources */,
 				BBCD7215283580390000F355 /* API.swift in Sources */,
 				BBCD71FE28357C090000F355 /* AppDependency.swift in Sources */,
+				BB678E5328363C930080968E /* UILabel+Extension.swift in Sources */,
 				BBCD720E28357E2D0000F355 /* Assembly.swift in Sources */,
 				BBCD71C428357AB00000F355 /* AppDelegate.swift in Sources */,
 				BBCD71C628357AB00000F355 /* SceneDelegate.swift in Sources */,
 				BBCD72212835817D0000F355 /* NetworkServiceProtocol.swift in Sources */,
-				BBCD7227283582630000F355 /* Stations.swift in Sources */,
+				BBCD7227283582630000F355 /* Station.swift in Sources */,
 				BBCD721F2835815F0000F355 /* NetworkService+Station.swift in Sources */,
 				0A8FEF874870FD00BE13EE8F /* StationAssembly.swift in Sources */,
 				AD375957B4276291DB21E803 /* StationViewController.swift in Sources */,
@@ -534,9 +589,14 @@
 				1B6BDB6E5BD4F00B8C7F7DD8 /* StationView.swift in Sources */,
 				BB36B62128358AA700930413 /* Font.swift in Sources */,
 				BB36B61F28358A7900930413 /* UIColor+Extension.swift in Sources */,
+				BB678E5528363D1B0080968E /* ReuseIdentifier.swift in Sources */,
 				8FA54BF23EB3C88D5BCB17F8 /* StationInputProtocol.swift in Sources */,
+				BB678E48283637FE0080968E /* StationCollectionViewAdapter.swift in Sources */,
+				BB678E4D28363A680080968E /* BaseUICollectionViewCell.swift in Sources */,
 				13973BB84A516A062D90FCE8 /* StationOutputProtocol.swift in Sources */,
+				BB678E5128363C0F0080968E /* GlobalConstants.swift in Sources */,
 				BB36B624283590C300930413 /* StationViewModel.swift in Sources */,
+				BB678E572836425E0080968E /* StationViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

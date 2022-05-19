@@ -1,5 +1,5 @@
 //
-//  Stations.swift
+//  Station.swift
 //  TestTaskMosgorpass
 //
 //  Created by Roman Gorshkov on 18.05.2022.
@@ -14,6 +14,23 @@ enum TypeElement: String, Decodable {
     case subwayHall = "subwayHall"
     case train = "train"
     case tram = "tram"
+    
+    var title: String {
+        switch self {
+        case .bus:
+            return "Автобус"
+        case .mcd:
+            return "МЦД"
+        case .publicTransport:
+            return "Все виды транспорта"
+        case .subwayHall:
+            return "Зал метро"
+        case .train:
+            return "Троллейбус"
+        case .tram:
+            return "Трамвай"
+        }
+    }
 }
 
 struct Station: Decodable {

@@ -10,8 +10,16 @@ final class StationPresenter: StationPresenterProtocol {
     func presentStationsResult(response: StationLoad.Loading.Response) {
         switch response.result {
         case .success(let result):
-            ///Преобразую данные во вьюмодели
+            ///Преобразую данные во вьюмодели и делаю дикишинари для секций
+            var dictTransortType = [[TypeElement: Int]]()
             var viewModels = [StationViewModel]()
+            let transportTypes = Array(Set(result.map { station -> TypeElement in
+                return station.type
+            })).sorted()
+            
+            for type in transportTypes {
+                dictTransortType.append([type: result.filter({ $0.type == type }).count])
+            }
             viewModels = result.map { station in
                 StationViewModel(
                     id: station.id,
@@ -35,10 +43,10 @@ final class StationPresenter: StationPresenterProtocol {
                     cityShuttle: station.cityShuttle,
                     electrobus: station.electrobus)
             }
-            viewController?.displayStations(viewModel: .init(data: viewModels))
+            viewController?.displayStations(viewModel: .init(data: (viewModels, dictTransortType)))
         case .failure(_):
             ///Обработать ошибку
-            break
+            viewController?.displayError(error: .init())
         }
     }
 }

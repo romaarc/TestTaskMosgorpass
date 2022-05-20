@@ -2,6 +2,7 @@ import UIKit
 
 protocol StationViewControllerProtocol: AnyObject {
     func displayStations(viewModel: StationLoad.Loading.ViewModel)
+    func displayError(error: StationLoad.Loading.onError)
 }
 
 final class StationViewController: UIViewController {
@@ -40,13 +41,26 @@ extension StationViewController: StationViewControllerProtocol {
     
     func displayStations(viewModel: StationLoad.Loading.ViewModel) {
         guard let stationView = stationView else { return }
-        collectionViewAdapter.components = viewModel.data
+        collectionViewAdapter.components = viewModel.data.0
+        collectionViewAdapter.filters = viewModel.data.1
         collectionViewAdapter.boundsWidth = stationView.bounds.width
         stationView.activityIndicator.startAnimating()
         DispatchQueue.main.async {
             stationView.updateCollectionViewData(
                 delegate: self.collectionViewAdapter,
-                dataSource: self.collectionViewAdapter)
+                dataSource: self.collectionViewAdapter,
+                isEmptyCollectionData: false)
+        }
+    }
+    
+    func displayError(error: StationLoad.Loading.onError) {
+        guard let stationView = stationView else { return }
+        stationView.activityIndicator.startAnimating()
+        DispatchQueue.main.async {
+            stationView.updateCollectionViewData(
+                delegate: self.collectionViewAdapter,
+                dataSource: self.collectionViewAdapter,
+                isEmptyCollectionData: true)
         }
     }
 }

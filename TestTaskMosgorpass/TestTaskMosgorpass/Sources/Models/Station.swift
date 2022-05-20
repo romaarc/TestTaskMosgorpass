@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum TypeElement: String, Decodable {
+enum TypeElement: String, Decodable, Comparable {
+    
     case bus = "bus"
     case mcd = "mcd"
     case publicTransport = "public_transport"
@@ -22,14 +23,35 @@ enum TypeElement: String, Decodable {
         case .mcd:
             return "МЦД"
         case .publicTransport:
-            return "Все виды транспорта"
+            return "Автобус"
         case .subwayHall:
-            return "Зал метро"
+            return "Выход из метро"
         case .train:
             return "Троллейбус"
         case .tram:
             return "Трамвай"
         }
+    }
+    
+    private var sortOrder: Int {
+        switch self {
+        case .bus:
+            return 1
+        case .mcd:
+            return 4
+        case .publicTransport:
+            return 1
+        case .subwayHall:
+            return 5
+        case .train:
+            return 3
+        case .tram:
+            return 2
+        }
+    }
+    
+    static func < (lhs: TypeElement, rhs: TypeElement) -> Bool {
+        return lhs.sortOrder < rhs.sortOrder
     }
 }
 

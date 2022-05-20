@@ -26,6 +26,7 @@ final class StationView: UIView, StationViewProtocol {
         )
 
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(StationHeaderlView.self)
         collectionView.register(StationCell.self)
 
         return collectionView
@@ -49,12 +50,22 @@ final class StationView: UIView, StationViewProtocol {
     }
     
     // MARK: - Protocol Conforming
-    func updateCollectionViewData(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource) {
-        collectionView.delegate = delegate
-        collectionView.dataSource = dataSource
-        collectionView.reloadData()
-        collectionView.collectionViewLayout.invalidateLayout()
-        activityIndicator.stopAnimating()
+    func updateCollectionViewData(
+        delegate: UICollectionViewDelegate,
+        dataSource: UICollectionViewDataSource,
+        isEmptyCollectionData: Bool) {
+            if isEmptyCollectionData {
+                activityIndicator.stopAnimating()
+                collectionView.setEmptyMessage(message: StationConstants.Strings.emptyMessage)
+            } else {
+                collectionView.restore()
+                collectionView.delegate = delegate
+                collectionView.dataSource = dataSource
+                collectionView.reloadData()
+                collectionView.collectionViewLayout.invalidateLayout()
+                activityIndicator.stopAnimating()
+            }
+        
     }
 
     func invalidateCollectionViewLayout() {

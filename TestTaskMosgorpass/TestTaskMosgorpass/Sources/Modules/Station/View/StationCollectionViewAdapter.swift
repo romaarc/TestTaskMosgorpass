@@ -19,10 +19,15 @@ final class StationCollectionViewAdapter: NSObject {
     weak var delegate: StationCollectionViewAdapterDelegate?
     
     var components: [StationViewModel]
+    var filters: [[TypeElement: Int]]
     var boundsWidth: CGFloat = 0
     
-    init(components: [StationViewModel] = []) {
+    init(
+        components: [StationViewModel] = [],
+        filters: [[TypeElement: Int]] = []
+    ) {
         self.components = components
+        self.filters = filters
         super.init()
     }
 }
@@ -30,15 +35,43 @@ final class StationCollectionViewAdapter: NSObject {
 // MARK: - StationCollectionViewAdapter: UICollectionViewDataSource -
 extension StationCollectionViewAdapter: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        filters.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        components.count
+        var countComponents = 0
+        let dict: [TypeElement: Int] = filters[section]
+        for key in dict.keys {
+            countComponents = dict[key] ?? 0
+        }
+        return countComponents
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(cellType: StationCell.self, for: indexPath)
-        let component = components[indexPath.row]
+        var sectionComponents: [StationViewModel] = []
+        let dict: [TypeElement: Int] = filters[indexPath.section]
+        for key in dict.keys {
+            sectionComponents = components.filter { $0.type == key }
+        }
+        sectionComponents = sectionComponents.sorted { $0.name < $1.name }
+        let component = sectionComponents[indexPath.row]
         cell.update(with: component)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let header = collectionView.dequeueSectionHeaderCell(cellType: StationHeaderlView.self, for: indexPath)
+        for key in filters[indexPath.section].keys {
+            header.update(with: key)
+        }
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if components.isEmpty { return .zero }
+        return CGSize(width: 298, height: 55)
     }
     
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {

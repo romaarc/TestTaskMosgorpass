@@ -15,6 +15,9 @@
 		A482ED8472E93148A5F2DBBE /* StationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B5AA1DB069D316CEB120B /* StationInteractor.swift */; };
 		AD375957B4276291DB21E803 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81CBD655902ACB9A89C4605 /* StationViewController.swift */; };
 		B4A71B481A3C2DC995C45060 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C33A4F1B4AC1F553133BE9 /* StationProvider.swift */; };
+		BB2205842837EED100BBE879 /* BaseUICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2205832837EED100BBE879 /* BaseUICollectionReusableView.swift */; };
+		BB2205872837EFBC00BBE879 /* StationHeaderlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2205862837EFBC00BBE879 /* StationHeaderlView.swift */; };
+		BB2205892838369600BBE879 /* UICollectionView+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2205882838369600BBE879 /* UICollectionView+Empty.swift */; };
 		BB36B61D28358A4400930413 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B61C28358A4400930413 /* Colors.swift */; };
 		BB36B61F28358A7900930413 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B61E28358A7900930413 /* UIColor+Extension.swift */; };
 		BB36B62128358AA700930413 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B62028358AA700930413 /* Font.swift */; };
@@ -78,6 +81,9 @@
 		875891380C4A7FC77AECDFD8 /* StationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
 		8A712CD3266AE55C9FB80495 /* StationInputProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInputProtocol.swift; sourceTree = "<group>"; };
 		B6EAD14E8D1E125E2078A1EC /* StationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationPresenter.swift; sourceTree = "<group>"; };
+		BB2205832837EED100BBE879 /* BaseUICollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUICollectionReusableView.swift; sourceTree = "<group>"; };
+		BB2205862837EFBC00BBE879 /* StationHeaderlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationHeaderlView.swift; sourceTree = "<group>"; };
+		BB2205882838369600BBE879 /* UICollectionView+Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Empty.swift"; sourceTree = "<group>"; };
 		BB36B61C28358A4400930413 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		BB36B61E28358A7900930413 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BB36B62028358AA700930413 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
@@ -155,6 +161,14 @@
 			path = InputOutput;
 			sourceTree = "<group>";
 		};
+		BB2205852837EF9700BBE879 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				BB2205862837EFBC00BBE879 /* StationHeaderlView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		BB36B622283590AD00930413 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +190,7 @@
 		BB678E49283639C60080968E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				BB2205852837EF9700BBE879 /* Header */,
 				BB678E4E28363AC30080968E /* StationCell.swift */,
 			);
 			path = Cell;
@@ -193,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				BB678E4C28363A680080968E /* BaseUICollectionViewCell.swift */,
+				BB2205832837EED100BBE879 /* BaseUICollectionReusableView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -367,6 +383,7 @@
 				BB36B62028358AA700930413 /* Font.swift */,
 				BB678E5228363C930080968E /* UILabel+Extension.swift */,
 				BB678E5428363D1B0080968E /* ReuseIdentifier.swift */,
+				BB2205882838369600BBE879 /* UICollectionView+Empty.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -562,7 +579,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2205842837EED100BBE879 /* BaseUICollectionReusableView.swift in Sources */,
 				BB678E4F28363AC30080968E /* StationCell.swift in Sources */,
+				BB2205892838369600BBE879 /* UICollectionView+Empty.swift in Sources */,
 				BBCD721D283581180000F355 /* NetworkService.swift in Sources */,
 				BBCD721028357E4B0000F355 /* ProgrammaticallyInitializableViewProtocol.swift in Sources */,
 				BBCD721328357E890000F355 /* Typealias.swift in Sources */,
@@ -587,6 +606,7 @@
 				38B366F2E053121C494E27DE /* StationDataFlow.swift in Sources */,
 				B4A71B481A3C2DC995C45060 /* StationProvider.swift in Sources */,
 				1B6BDB6E5BD4F00B8C7F7DD8 /* StationView.swift in Sources */,
+				BB2205872837EFBC00BBE879 /* StationHeaderlView.swift in Sources */,
 				BB36B62128358AA700930413 /* Font.swift in Sources */,
 				BB36B61F28358A7900930413 /* UIColor+Extension.swift in Sources */,
 				BB678E5528363D1B0080968E /* ReuseIdentifier.swift in Sources */,

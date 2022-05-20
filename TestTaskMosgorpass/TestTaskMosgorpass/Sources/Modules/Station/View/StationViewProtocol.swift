@@ -8,5 +8,8 @@
 import UIKit
 
 protocol StationViewProtocol: AnyObject {
-    func updateCollectionViewData(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource)
+    func updateCollectionViewData(
+        delegate: UICollectionViewDelegate,
+        dataSource: UICollectionViewDataSource,
+        isEmptyCollectionData: Bool)
 }

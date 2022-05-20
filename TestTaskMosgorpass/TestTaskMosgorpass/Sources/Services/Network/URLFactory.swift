@@ -25,7 +25,7 @@ enum URLFactory {
         let urlComponents = baseURLComponents
         var request = URLRequest(url: urlComponents.url!.appendingPathComponent(API.TypeOf.stops))
         request.httpMethod = HTTPMethod.get.rawValue
-        request.timeoutInterval = 30
+        request.timeoutInterval = 3
         return request
     }
 }

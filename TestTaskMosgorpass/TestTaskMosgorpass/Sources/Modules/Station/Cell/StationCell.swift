@@ -67,11 +67,7 @@ extension StationCell {
     
     //MARK: - Update with ViewModel
     func update(with viewModel: StationViewModel) {
-        if viewModel.transportTypes.isEmpty {
-            nameLabel.text = viewModel.name
-        } else {
-            typeLabel.text = viewModel.transportTypes[0].title
-            nameLabel.text = viewModel.name
-        }
+        typeLabel.text = viewModel.electrobus ? "Электробус" : viewModel.type.title
+        nameLabel.text = viewModel.name
     }
 }

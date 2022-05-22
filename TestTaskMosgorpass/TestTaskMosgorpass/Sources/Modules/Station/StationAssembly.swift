@@ -11,12 +11,28 @@ final class StationAssembly: Assembly {
     
     func makeModule(with context: ModuleContext?) -> UIViewController {
         guard let context = context else { return UIViewController() }
+        let router = StationRouter()
+        
         let provider = StationProvider(
             mosgorpassNetworkService: context.moduleDependencies.mosgorpassNetworkService
         )
+        
         let presenter = StationPresenter()
         let interactor = StationInteractor(presenter: presenter, provider: provider)
-        let viewController = StationViewController(interactor: interactor)
+        
+        let viewController = StationViewController(
+            interactor: interactor,
+            router: router
+        )
+        
+        router.viewControllerProvider = { [weak viewController] in
+            viewController
+        }
+        router.navigationControllerProvider = { [weak viewController] in
+            viewController?.navigationController
+        }
+        
+        router.moduleDependencies = context.moduleDependencies
         
         presenter.viewController = viewController
         self.moduleInput = interactor

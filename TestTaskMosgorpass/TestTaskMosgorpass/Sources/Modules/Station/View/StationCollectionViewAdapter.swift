@@ -69,6 +69,13 @@ extension StationCollectionViewAdapter: UICollectionViewDataSource {
         return header
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.stationCollectionViewAdapter(
+            self,
+            didSelectComponentAt: indexPath
+        )
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if components.isEmpty { return .zero }
         return CGSize(width: 298, height: 55)

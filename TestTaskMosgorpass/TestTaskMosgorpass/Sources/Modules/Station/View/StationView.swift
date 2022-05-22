@@ -82,7 +82,7 @@ extension StationView: ProgrammaticallyInitializableViewProtocol {
 
     func addSubviews() {
         addSubview(collectionView)
-        collectionView.addSubview(activityIndicator)
+        addSubview(activityIndicator)
     }
 
     func makeConstraints() {

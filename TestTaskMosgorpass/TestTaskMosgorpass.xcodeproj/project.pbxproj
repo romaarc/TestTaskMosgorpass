@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		0A8FEF874870FD00BE13EE8F /* StationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A09F61C071FC54871B4B87 /* StationAssembly.swift */; };
+		0C254B96AF871ACB8CAD30F3 /* MapDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74721A2B0C9DD94D6C669BF4 /* MapDetailInteractor.swift */; };
+		0F37BEEC9F7A89CCA2E0C39A /* MapDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240265065E1916028A25AEB6 /* MapDetailView.swift */; };
 		13973BB84A516A062D90FCE8 /* StationOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0198565D0A1D56A179A62E6A /* StationOutputProtocol.swift */; };
 		1B6BDB6E5BD4F00B8C7F7DD8 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875891380C4A7FC77AECDFD8 /* StationView.swift */; };
 		38B366F2E053121C494E27DE /* StationDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7C02E5C3D07ABA3EECC950 /* StationDataFlow.swift */; };
+		66F09089F69AA42A9244D245 /* MapDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE4D25D488FF536865CE335 /* MapDetailPresenter.swift */; };
+		67E18F373686283AE87243F2 /* MapDetailInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AACB751A275B5720B9404C /* MapDetailInputProtocol.swift */; };
+		7B0AE81FFF28064E32B18758 /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835395507024CA61722FB3C /* MapDetailViewController.swift */; };
+		861E9D95BE6F83BA17BD3653 /* Pods_TestTaskMosgorpass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D5DD31B482943CB496B295 /* Pods_TestTaskMosgorpass.framework */; };
 		8FA54BF23EB3C88D5BCB17F8 /* StationInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A712CD3266AE55C9FB80495 /* StationInputProtocol.swift */; };
+		9AF20380A98FDF6A2B1D0CB5 /* Pods_TestTaskMosgorpassTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6EA79A2173BCD63B86764BB /* Pods_TestTaskMosgorpassTests.framework */; };
 		A482ED8472E93148A5F2DBBE /* StationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658B5AA1DB069D316CEB120B /* StationInteractor.swift */; };
 		AD375957B4276291DB21E803 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81CBD655902ACB9A89C4605 /* StationViewController.swift */; };
+		AEC31C249E1C882B1EA13FFB /* MapDetailOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A05FD802B31984D684C889B /* MapDetailOutputProtocol.swift */; };
 		B4A71B481A3C2DC995C45060 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C33A4F1B4AC1F553133BE9 /* StationProvider.swift */; };
 		BB2205842837EED100BBE879 /* BaseUICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2205832837EED100BBE879 /* BaseUICollectionReusableView.swift */; };
 		BB2205872837EFBC00BBE879 /* StationHeaderlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2205862837EFBC00BBE879 /* StationHeaderlView.swift */; };
@@ -29,6 +37,11 @@
 		BB678E5328363C930080968E /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E5228363C930080968E /* UILabel+Extension.swift */; };
 		BB678E5528363D1B0080968E /* ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E5428363D1B0080968E /* ReuseIdentifier.swift */; };
 		BB678E572836425E0080968E /* StationViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E562836425E0080968E /* StationViewProtocol.swift */; };
+		BB6EEEDE283A45BF003A7955 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6EEEDD283A45BF003A7955 /* UIButton+Extension.swift */; };
+		BB6EEEE0283A45E2003A7955 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6EEEDF283A45E2003A7955 /* UIImage+Extension.swift */; };
+		BB7E2961283921E100130982 /* StationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E2960283921E100130982 /* StationDetail.swift */; };
+		BB7E29632839255F00130982 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E29622839255F00130982 /* BaseRouter.swift */; };
+		BB7E2965283925F700130982 /* StationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7E2964283925F700130982 /* StationRouter.swift */; };
 		BBCD71C428357AB00000F355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD71C328357AB00000F355 /* AppDelegate.swift */; };
 		BBCD71C628357AB00000F355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD71C528357AB00000F355 /* SceneDelegate.swift */; };
 		BBCD71CD28357AB20000F355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCD71CC28357AB20000F355 /* Assets.xcassets */; };
@@ -53,7 +66,11 @@
 		BBCD7223283581990000F355 /* URLFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD7222283581990000F355 /* URLFactory.swift */; };
 		BBCD7225283581C30000F355 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD7224283581C30000F355 /* Response.swift */; };
 		BBCD7227283582630000F355 /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD7226283582630000F355 /* Station.swift */; };
+		D73CF216285BDCD19FD945A4 /* MapDetailDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA279D9F565AD5EF23D60F6A /* MapDetailDataFlow.swift */; };
+		D82C521E56B64CBE407523B1 /* Pods_TestTaskMosgorpass_TestTaskMosgorpassUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B77BDCEECB50BB12AF9BDE7 /* Pods_TestTaskMosgorpass_TestTaskMosgorpassUITests.framework */; };
+		E3BB8908A939D3C0249364A6 /* MapDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CB9FF033040215EC29367 /* MapDetailProvider.swift */; };
 		EC81172823A2242F69299E2C /* StationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EAD14E8D1E125E2078A1EC /* StationPresenter.swift */; };
+		FA74CCD5C4D038085559E778 /* MapDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37757CB01A3A0F3009C398CE /* MapDetailAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,11 +92,26 @@
 
 /* Begin PBXFileReference section */
 		0198565D0A1D56A179A62E6A /* StationOutputProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationOutputProtocol.swift; sourceTree = "<group>"; };
+		04D5DD31B482943CB496B295 /* Pods_TestTaskMosgorpass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTaskMosgorpass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A05FD802B31984D684C889B /* MapDetailOutputProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MapDetailOutputProtocol.swift; sourceTree = "<group>"; };
+		1835395507024CA61722FB3C /* MapDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
+		223A2A7207A934B020760498 /* Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests.debug.xcconfig"; path = "Target Support Files/Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests/Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		240265065E1916028A25AEB6 /* MapDetailView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MapDetailView.swift; sourceTree = "<group>"; };
 		27A09F61C071FC54871B4B87 /* StationAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationAssembly.swift; sourceTree = "<group>"; };
+		2B77BDCEECB50BB12AF9BDE7 /* Pods_TestTaskMosgorpass_TestTaskMosgorpassUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTaskMosgorpass_TestTaskMosgorpassUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		331CB9FF033040215EC29367 /* MapDetailProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MapDetailProvider.swift; sourceTree = "<group>"; };
+		37757CB01A3A0F3009C398CE /* MapDetailAssembly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MapDetailAssembly.swift; sourceTree = "<group>"; };
 		658B5AA1DB069D316CEB120B /* StationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInteractor.swift; sourceTree = "<group>"; };
+		71A122C5CFC6773BCA407172 /* Pods-TestTaskMosgorpassTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskMosgorpassTests.release.xcconfig"; path = "Target Support Files/Pods-TestTaskMosgorpassTests/Pods-TestTaskMosgorpassTests.release.xcconfig"; sourceTree = "<group>"; };
+		74721A2B0C9DD94D6C669BF4 /* MapDetailInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MapDetailInteractor.swift; sourceTree = "<group>"; };
 		75C33A4F1B4AC1F553133BE9 /* StationProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationProvider.swift; sourceTree = "<group>"; };
+		7C0BD19F3299450AC3A5814A /* Pods-TestTaskMosgorpassTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskMosgorpassTests.debug.xcconfig"; path = "Target Support Files/Pods-TestTaskMosgorpassTests/Pods-TestTaskMosgorpassTests.debug.xcconfig"; sourceTree = "<group>"; };
 		875891380C4A7FC77AECDFD8 /* StationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
 		8A712CD3266AE55C9FB80495 /* StationInputProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInputProtocol.swift; sourceTree = "<group>"; };
+		AA279D9F565AD5EF23D60F6A /* MapDetailDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MapDetailDataFlow.swift; sourceTree = "<group>"; };
+		AAE4D25D488FF536865CE335 /* MapDetailPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MapDetailPresenter.swift; sourceTree = "<group>"; };
+		B34F7AB28C1E33A09CA4E86B /* Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests.release.xcconfig"; path = "Target Support Files/Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests/Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B6EA79A2173BCD63B86764BB /* Pods_TestTaskMosgorpassTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTaskMosgorpassTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6EAD14E8D1E125E2078A1EC /* StationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationPresenter.swift; sourceTree = "<group>"; };
 		BB2205832837EED100BBE879 /* BaseUICollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUICollectionReusableView.swift; sourceTree = "<group>"; };
 		BB2205862837EFBC00BBE879 /* StationHeaderlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationHeaderlView.swift; sourceTree = "<group>"; };
@@ -95,6 +127,11 @@
 		BB678E5228363C930080968E /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		BB678E5428363D1B0080968E /* ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifier.swift; sourceTree = "<group>"; };
 		BB678E562836425E0080968E /* StationViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewProtocol.swift; sourceTree = "<group>"; };
+		BB6EEEDD283A45BF003A7955 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		BB6EEEDF283A45E2003A7955 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		BB7E2960283921E100130982 /* StationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetail.swift; sourceTree = "<group>"; };
+		BB7E29622839255F00130982 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		BB7E2964283925F700130982 /* StationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationRouter.swift; sourceTree = "<group>"; };
 		BBCD71C028357AB00000F355 /* TestTaskMosgorpass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskMosgorpass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCD71C328357AB00000F355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBCD71C528357AB00000F355 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +159,10 @@
 		BBCD7224283581C30000F355 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		BBCD7226283582630000F355 /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		C81CBD655902ACB9A89C4605 /* StationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
+		CB3EA417C7F9F45A2C604FD5 /* Pods-TestTaskMosgorpass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskMosgorpass.debug.xcconfig"; path = "Target Support Files/Pods-TestTaskMosgorpass/Pods-TestTaskMosgorpass.debug.xcconfig"; sourceTree = "<group>"; };
 		CD7C02E5C3D07ABA3EECC950 /* StationDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationDataFlow.swift; sourceTree = "<group>"; };
+		D5AACB751A275B5720B9404C /* MapDetailInputProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MapDetailInputProtocol.swift; sourceTree = "<group>"; };
+		D896600A2097088672DAB3C4 /* Pods-TestTaskMosgorpass.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskMosgorpass.release.xcconfig"; path = "Target Support Files/Pods-TestTaskMosgorpass/Pods-TestTaskMosgorpass.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +172,7 @@
 			files = (
 				BBCD7218283580E10000F355 /* PromiseKit in Frameworks */,
 				BBCD721B283580FD0000F355 /* SnapKit in Frameworks */,
+				861E9D95BE6F83BA17BD3653 /* Pods_TestTaskMosgorpass.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF20380A98FDF6A2B1D0CB5 /* Pods_TestTaskMosgorpassTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D82C521E56B64CBE407523B1 /* Pods_TestTaskMosgorpass_TestTaskMosgorpassUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +202,19 @@
 				0198565D0A1D56A179A62E6A /* StationOutputProtocol.swift */,
 			);
 			path = InputOutput;
+			sourceTree = "<group>";
+		};
+		76B38E62218367F70199641B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB3EA417C7F9F45A2C604FD5 /* Pods-TestTaskMosgorpass.debug.xcconfig */,
+				D896600A2097088672DAB3C4 /* Pods-TestTaskMosgorpass.release.xcconfig */,
+				223A2A7207A934B020760498 /* Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests.debug.xcconfig */,
+				B34F7AB28C1E33A09CA4E86B /* Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests.release.xcconfig */,
+				7C0BD19F3299450AC3A5814A /* Pods-TestTaskMosgorpassTests.debug.xcconfig */,
+				71A122C5CFC6773BCA407172 /* Pods-TestTaskMosgorpassTests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		BB2205852837EF9700BBE879 /* Header */ = {
@@ -190,8 +246,8 @@
 		BB678E49283639C60080968E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				BB2205852837EF9700BBE879 /* Header */,
 				BB678E4E28363AC30080968E /* StationCell.swift */,
+				BB2205852837EF9700BBE879 /* Header */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -213,6 +269,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		BB7E295E283921AA00130982 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BBCD7224283581C30000F355 /* Response.swift */,
+				BBCD7226283582630000F355 /* Station.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		BB7E295F283921B600130982 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BB7E2960283921E100130982 /* StationDetail.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		BBCD71B728357AB00000F355 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +293,8 @@
 				BBCD71D928357AB20000F355 /* TestTaskMosgorpassTests */,
 				BBCD71E328357AB20000F355 /* TestTaskMosgorpassUITests */,
 				BBCD71C128357AB00000F355 /* Products */,
+				76B38E62218367F70199641B /* Pods */,
+				F104178DE6522BFEBF04208D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -288,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				F7ED6A24F4371EA23C5150DE /* Station */,
+				C72C53DED1E3880AC2F6D9DC /* MapDetail */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -333,8 +409,8 @@
 		BBCD71FA28357BA80000F355 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				BBCD7224283581C30000F355 /* Response.swift */,
-				BBCD7226283582630000F355 /* Station.swift */,
+				BB7E295E283921AA00130982 /* Main */,
+				BB7E295F283921B600130982 /* Detail */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -344,6 +420,7 @@
 			children = (
 				BB678E4A28363A3D0080968E /* UI */,
 				BBCD720028357C120000F355 /* Protocols */,
+				BB7E29622839255F00130982 /* BaseRouter.swift */,
 			);
 			path = VIP;
 			sourceTree = "<group>";
@@ -384,6 +461,8 @@
 				BB678E5228363C930080968E /* UILabel+Extension.swift */,
 				BB678E5428363D1B0080968E /* ReuseIdentifier.swift */,
 				BB2205882838369600BBE879 /* UICollectionView+Empty.swift */,
+				BB6EEEDD283A45BF003A7955 /* UIButton+Extension.swift */,
+				BB6EEEDF283A45E2003A7955 /* UIImage+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -422,6 +501,40 @@
 			path = Typealias;
 			sourceTree = "<group>";
 		};
+		C72C53DED1E3880AC2F6D9DC /* MapDetail */ = {
+			isa = PBXGroup;
+			children = (
+				37757CB01A3A0F3009C398CE /* MapDetailAssembly.swift */,
+				1835395507024CA61722FB3C /* MapDetailViewController.swift */,
+				74721A2B0C9DD94D6C669BF4 /* MapDetailInteractor.swift */,
+				AAE4D25D488FF536865CE335 /* MapDetailPresenter.swift */,
+				AA279D9F565AD5EF23D60F6A /* MapDetailDataFlow.swift */,
+				331CB9FF033040215EC29367 /* MapDetailProvider.swift */,
+				240265065E1916028A25AEB6 /* MapDetailView.swift */,
+				DAB9B15F0996A1371894DCD5 /* InputOutput */,
+			);
+			path = MapDetail;
+			sourceTree = "<group>";
+		};
+		DAB9B15F0996A1371894DCD5 /* InputOutput */ = {
+			isa = PBXGroup;
+			children = (
+				D5AACB751A275B5720B9404C /* MapDetailInputProtocol.swift */,
+				0A05FD802B31984D684C889B /* MapDetailOutputProtocol.swift */,
+			);
+			path = InputOutput;
+			sourceTree = "<group>";
+		};
+		F104178DE6522BFEBF04208D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04D5DD31B482943CB496B295 /* Pods_TestTaskMosgorpass.framework */,
+				2B77BDCEECB50BB12AF9BDE7 /* Pods_TestTaskMosgorpass_TestTaskMosgorpassUITests.framework */,
+				B6EA79A2173BCD63B86764BB /* Pods_TestTaskMosgorpassTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F7ED6A24F4371EA23C5150DE /* Station */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +547,7 @@
 				B6EAD14E8D1E125E2078A1EC /* StationPresenter.swift */,
 				CD7C02E5C3D07ABA3EECC950 /* StationDataFlow.swift */,
 				75C33A4F1B4AC1F553133BE9 /* StationProvider.swift */,
+				BB7E2964283925F700130982 /* StationRouter.swift */,
 				3A5B6F9EDC5D291427B90C84 /* InputOutput */,
 			);
 			path = Station;
@@ -446,9 +560,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBCD71EA28357AB20000F355 /* Build configuration list for PBXNativeTarget "TestTaskMosgorpass" */;
 			buildPhases = (
+				07E99E9F1FDBDB112C967F71 /* [CP] Check Pods Manifest.lock */,
 				BBCD71BC28357AB00000F355 /* Sources */,
 				BBCD71BD28357AB00000F355 /* Frameworks */,
 				BBCD71BE28357AB00000F355 /* Resources */,
+				4BFCBA421D6ACAE0EE6C9189 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -467,6 +583,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBCD71ED28357AB20000F355 /* Build configuration list for PBXNativeTarget "TestTaskMosgorpassTests" */;
 			buildPhases = (
+				CECA6405A1A0D8C59ACB72D9 /* [CP] Check Pods Manifest.lock */,
 				BBCD71D228357AB20000F355 /* Sources */,
 				BBCD71D328357AB20000F355 /* Frameworks */,
 				BBCD71D428357AB20000F355 /* Resources */,
@@ -485,9 +602,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BBCD71F028357AB20000F355 /* Build configuration list for PBXNativeTarget "TestTaskMosgorpassUITests" */;
 			buildPhases = (
+				E02FD69F272718931B9E2A86 /* [CP] Check Pods Manifest.lock */,
 				BBCD71DC28357AB20000F355 /* Sources */,
 				BBCD71DD28357AB20000F355 /* Frameworks */,
 				BBCD71DE28357AB20000F355 /* Resources */,
+				A7350AC65305228CBF65E4DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -574,6 +693,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07E99E9F1FDBDB112C967F71 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestTaskMosgorpass-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BFCBA421D6ACAE0EE6C9189 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTaskMosgorpass/Pods-TestTaskMosgorpass-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTaskMosgorpass/Pods-TestTaskMosgorpass-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestTaskMosgorpass/Pods-TestTaskMosgorpass-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7350AC65305228CBF65E4DF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests/Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests/Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests/Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CECA6405A1A0D8C59ACB72D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestTaskMosgorpassTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E02FD69F272718931B9E2A86 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BBCD71BC28357AB00000F355 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -581,6 +803,7 @@
 			files = (
 				BB2205842837EED100BBE879 /* BaseUICollectionReusableView.swift in Sources */,
 				BB678E4F28363AC30080968E /* StationCell.swift in Sources */,
+				BB7E29632839255F00130982 /* BaseRouter.swift in Sources */,
 				BB2205892838369600BBE879 /* UICollectionView+Empty.swift in Sources */,
 				BBCD721D283581180000F355 /* NetworkService.swift in Sources */,
 				BBCD721028357E4B0000F355 /* ProgrammaticallyInitializableViewProtocol.swift in Sources */,
@@ -598,6 +821,7 @@
 				BBCD71C628357AB00000F355 /* SceneDelegate.swift in Sources */,
 				BBCD72212835817D0000F355 /* NetworkServiceProtocol.swift in Sources */,
 				BBCD7227283582630000F355 /* Station.swift in Sources */,
+				BB6EEEDE283A45BF003A7955 /* UIButton+Extension.swift in Sources */,
 				BBCD721F2835815F0000F355 /* NetworkService+Station.swift in Sources */,
 				0A8FEF874870FD00BE13EE8F /* StationAssembly.swift in Sources */,
 				AD375957B4276291DB21E803 /* StationViewController.swift in Sources */,
@@ -605,6 +829,7 @@
 				EC81172823A2242F69299E2C /* StationPresenter.swift in Sources */,
 				38B366F2E053121C494E27DE /* StationDataFlow.swift in Sources */,
 				B4A71B481A3C2DC995C45060 /* StationProvider.swift in Sources */,
+				BB7E2961283921E100130982 /* StationDetail.swift in Sources */,
 				1B6BDB6E5BD4F00B8C7F7DD8 /* StationView.swift in Sources */,
 				BB2205872837EFBC00BBE879 /* StationHeaderlView.swift in Sources */,
 				BB36B62128358AA700930413 /* Font.swift in Sources */,
@@ -614,9 +839,20 @@
 				BB678E48283637FE0080968E /* StationCollectionViewAdapter.swift in Sources */,
 				BB678E4D28363A680080968E /* BaseUICollectionViewCell.swift in Sources */,
 				13973BB84A516A062D90FCE8 /* StationOutputProtocol.swift in Sources */,
+				BB7E2965283925F700130982 /* StationRouter.swift in Sources */,
+				BB6EEEE0283A45E2003A7955 /* UIImage+Extension.swift in Sources */,
 				BB678E5128363C0F0080968E /* GlobalConstants.swift in Sources */,
 				BB36B624283590C300930413 /* StationViewModel.swift in Sources */,
 				BB678E572836425E0080968E /* StationViewProtocol.swift in Sources */,
+				FA74CCD5C4D038085559E778 /* MapDetailAssembly.swift in Sources */,
+				7B0AE81FFF28064E32B18758 /* MapDetailViewController.swift in Sources */,
+				0C254B96AF871ACB8CAD30F3 /* MapDetailInteractor.swift in Sources */,
+				66F09089F69AA42A9244D245 /* MapDetailPresenter.swift in Sources */,
+				D73CF216285BDCD19FD945A4 /* MapDetailDataFlow.swift in Sources */,
+				E3BB8908A939D3C0249364A6 /* MapDetailProvider.swift in Sources */,
+				0F37BEEC9F7A89CCA2E0C39A /* MapDetailView.swift in Sources */,
+				67E18F373686283AE87243F2 /* MapDetailInputProtocol.swift in Sources */,
+				AEC31C249E1C882B1EA13FFB /* MapDetailOutputProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,11 +1016,13 @@
 		};
 		BBCD71EB28357AB20000F355 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB3EA417C7F9F45A2C604FD5 /* Pods-TestTaskMosgorpass.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PY9YPV5R98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestTaskMosgorpass/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -807,11 +1045,13 @@
 		};
 		BBCD71EC28357AB20000F355 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D896600A2097088672DAB3C4 /* Pods-TestTaskMosgorpass.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PY9YPV5R98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestTaskMosgorpass/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -834,6 +1074,7 @@
 		};
 		BBCD71EE28357AB20000F355 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C0BD19F3299450AC3A5814A /* Pods-TestTaskMosgorpassTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -853,6 +1094,7 @@
 		};
 		BBCD71EF28357AB20000F355 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71A122C5CFC6773BCA407172 /* Pods-TestTaskMosgorpassTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -872,6 +1114,7 @@
 		};
 		BBCD71F128357AB20000F355 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 223A2A7207A934B020760498 /* Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -889,6 +1132,7 @@
 		};
 		BBCD71F228357AB20000F355 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B34F7AB28C1E33A09CA4E86B /* Pods-TestTaskMosgorpass-TestTaskMosgorpassUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

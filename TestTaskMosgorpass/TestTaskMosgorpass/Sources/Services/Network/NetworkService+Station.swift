@@ -13,4 +13,8 @@ extension NetworkService: NetworkServiceProtocol {
     func fetch() -> Promise<Response<Station>> {
         baseRequest(request: URLFactory.getURL())
     }
+    
+    func fetchById(withID id: String) -> Promise<StationDetail> {
+        baseRequest(request: URLFactory.getDetailURL(withID: id))
+    }
 }

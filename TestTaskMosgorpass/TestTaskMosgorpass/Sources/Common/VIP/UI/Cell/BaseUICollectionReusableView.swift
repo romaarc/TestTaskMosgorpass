@@ -19,4 +19,3 @@ class BaseUICollectionReusableView: UICollectionReusableView {
     
     func setupView() {}
 }
-

@@ -28,6 +28,14 @@ enum URLFactory {
         request.timeoutInterval = 3
         return request
     }
+    
+    static func getDetailURL(withID id: String) -> URLRequest {
+        let urlComponents = baseURLComponents
+        var request = URLRequest(url: urlComponents.url!.appendingPathComponent(API.TypeOf.stops).appendingPathComponent(id))
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.timeoutInterval = 3
+        return request
+    }
 }
 
 enum HTTPMethod: String {

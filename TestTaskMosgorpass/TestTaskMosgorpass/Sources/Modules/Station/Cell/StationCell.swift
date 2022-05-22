@@ -67,7 +67,34 @@ extension StationCell {
     
     //MARK: - Update with ViewModel
     func update(with viewModel: StationViewModel) {
-        typeLabel.text = viewModel.electrobus ? "Электробус" : viewModel.type.title
-        nameLabel.text = viewModel.name
+        switch viewModel.type {
+        case .bus:
+            typeLabel.text = viewModel.electrobus ? "Электробус" : viewModel.type.title
+            nameLabel.text = viewModel.name
+            nameLabel.textColor = UIColor.black
+        case .mcd:
+            typeLabel.text = viewModel.type.title
+            nameLabel.text = viewModel.name
+            nameLabel.textColor = UIColor.black
+        case .publicTransport:
+            typeLabel.text = viewModel.electrobus ? "Электробус" : viewModel.type.title
+            nameLabel.text = viewModel.name
+            nameLabel.textColor = UIColor.black
+        case .subwayHall:
+            typeLabel.text = viewModel.type.title
+            nameLabel.text = viewModel.name
+            if let color = viewModel.color {
+                guard let hexStringValue = UInt32(color.dropFirst(1), radix: 16) else { return }
+                nameLabel.textColor = UIColor.init(hex6: hexStringValue)
+            }
+        case .train:
+            typeLabel.text = viewModel.type.title
+            nameLabel.text = viewModel.name
+            nameLabel.textColor = UIColor.black
+        case .tram:
+            typeLabel.text = viewModel.type.title
+            nameLabel.text = viewModel.name
+            nameLabel.textColor = UIColor.black
+        }
     }
 }

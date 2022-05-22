@@ -7,13 +7,18 @@ protocol StationViewControllerProtocol: AnyObject {
 
 final class StationViewController: UIViewController {
     private let interactor: StationInteractorProtocol
+    private let router: StationRouterInput
     
     var stationView: StationView? { self.view as? StationView }
     
     private var collectionViewAdapter = StationCollectionViewAdapter()
     
-    init(interactor: StationInteractorProtocol) {
+    init(
+        interactor: StationInteractorProtocol,
+        router: StationRouterInput
+    ) {
         self.interactor = interactor
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,12 +35,20 @@ final class StationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewAdapter.delegate = self
-        fetch()
+        fetchStations()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if navigationController?.navigationBar.isHidden == true {
+            navigationController?.navigationBar.isHidden = false
+        }
     }
 }
 
 extension StationViewController: StationViewControllerProtocol {
-    func fetch() {
+    func fetchStations() {
+        stationView?.activityIndicator.startAnimating()
         interactor.doStationsUpdate(request: .init())
     }
     
@@ -44,7 +57,6 @@ extension StationViewController: StationViewControllerProtocol {
         collectionViewAdapter.components = viewModel.data.0
         collectionViewAdapter.filters = viewModel.data.1
         collectionViewAdapter.boundsWidth = stationView.bounds.width
-        stationView.activityIndicator.startAnimating()
         DispatchQueue.main.async {
             stationView.updateCollectionViewData(
                 delegate: self.collectionViewAdapter,
@@ -70,6 +82,13 @@ extension StationViewController: StationCollectionViewAdapterDelegate {
     func stationCollectionViewAdapter(
         _ adapter: StationCollectionViewAdapter,
         didSelectComponentAt indexPath: IndexPath) {
-            
+            var sectionComponents: [StationViewModel] = []
+            let dict: [TypeElement: Int] = adapter.filters[indexPath.section]
+            for key in dict.keys {
+                sectionComponents = adapter.components.filter { $0.type == key }
+            }
+            sectionComponents = sectionComponents.sorted { $0.name < $1.name }
+            let component = sectionComponents[indexPath.row]
+            router.showDetail(with: component)
         }
 }

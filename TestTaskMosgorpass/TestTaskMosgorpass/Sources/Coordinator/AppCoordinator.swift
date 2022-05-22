@@ -25,7 +25,7 @@ final class AppCoordinator {
         navigationControllers = AppCoordinator.makeNavigationControllers()
     }
     
-    func start() {
+    func start() {        
         ///режим интерфейса всегда белый
         if #available(iOS 13.0, *) {
             window.overrideUserInterfaceStyle = .light

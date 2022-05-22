@@ -37,6 +37,6 @@ class StationHeaderlView: BaseUICollectionReusableView {
     }
     
     func update(with viewModel: TypeElement) {
-        label.text = viewModel.title
+        label.text = viewModel.titles
     }
 }

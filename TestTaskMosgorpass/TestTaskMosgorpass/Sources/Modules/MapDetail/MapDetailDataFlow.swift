@@ -1,11 +1,21 @@
 import Foundation
 
-enum MapDetail {
-    enum SomeAction {
-        struct Request { }
+enum MapDetailLoad {
+    enum Loading {
+        struct Response {
+            let result: Result<StationDetail, Error>
+        }
 
-        struct Response { }
-
-        struct ViewModel { }
+        struct ViewModel {
+            let data: StationDetailViewModel
+        }
+        
+        struct onError {}
+    }
+    
+    enum StationDetailUpdate {
+        struct Request {
+            let data: StationViewModel
+        }
     }
 }

@@ -45,7 +45,7 @@ final class StationViewController: UIViewController {
         }
     }
 }
-
+// MARK: - StationViewController: StationViewControllerProtocol -
 extension StationViewController: StationViewControllerProtocol {
     func fetchStations() {
         stationView?.activityIndicator.startAnimating()

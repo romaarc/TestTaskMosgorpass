@@ -3,7 +3,8 @@ import YandexMapsMobile
 import CoreLocation
 
 protocol MapDetailViewControllerProtocol: AnyObject {
-    func displaySomeActionResult(viewModel: MapDetail.SomeAction.ViewModel)
+    func displayStationDetail(viewModel: MapDetailLoad.Loading.ViewModel)
+    func displayError(error: MapDetailLoad.Loading.onError)
 }
 
 final class MapDetailViewController: UIViewController, UIGestureRecognizerDelegate {
@@ -47,6 +48,7 @@ final class MapDetailViewController: UIViewController, UIGestureRecognizerDelega
         setupTargetZoomButtons()
         setupLocationManager()
         configureMap()
+        fetchStation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +62,21 @@ final class MapDetailViewController: UIViewController, UIGestureRecognizerDelega
     private func setupNavigationBar() {
         navigationController?.navigationBar.isHidden = true
     }
+}
+
+// MARK: - MapDetailViewController: MapDetailViewControllerProtocol -
+extension MapDetailViewController: MapDetailViewControllerProtocol {
+    func displayStationDetail(viewModel: MapDetailLoad.Loading.ViewModel) {
+       
+    }
     
+    func displayError(error: MapDetailLoad.Loading.onError) {
+        
+    }
+}
+
+// MARK: - MapDetailViewController
+extension MapDetailViewController {
     private func setupTargetZoomButtons() {
         stationDetailView?.zoomInButton.addTarget(self, action: #selector(onTapZoomInButton), for: .touchUpInside)
         stationDetailView?.zoomOutButton.addTarget(self, action: #selector(onTapZoomOutButton), for: .touchUpInside)
@@ -71,7 +87,7 @@ final class MapDetailViewController: UIViewController, UIGestureRecognizerDelega
         locationManager.requestWhenInUseAuthorization()
     }
     
-    func configureMap() {
+    private func configureMap() {
         DispatchQueue.main.async {
             self.map.move(
                 with: YMKCameraPosition.init(target: self.target, zoom: 17, azimuth: 0, tilt: 0))
@@ -83,6 +99,10 @@ final class MapDetailViewController: UIViewController, UIGestureRecognizerDelega
             let placemark = mapObjects.addPlacemark(with: self.target)
             placemark.setIconWith(UIImage(named: "circle")!)
         }
+    }
+    
+    private func fetchStation() {
+        interactor.doStationUpdate(request: .init(data: stationViewModel))
     }
     
     @objc
@@ -116,10 +136,7 @@ final class MapDetailViewController: UIViewController, UIGestureRecognizerDelega
     }
 }
 
-extension MapDetailViewController: MapDetailViewControllerProtocol {
-    func displaySomeActionResult(viewModel: MapDetail.SomeAction.ViewModel) { }
-}
-
+// MARK: - MapDetailViewController: YMKLayersGeoObjectTapListener, YMKMapInputListener -
 extension MapDetailViewController: YMKLayersGeoObjectTapListener, YMKMapInputListener {
     func onObjectTap(with: YMKGeoObjectTapEvent) -> Bool {
         let event = with

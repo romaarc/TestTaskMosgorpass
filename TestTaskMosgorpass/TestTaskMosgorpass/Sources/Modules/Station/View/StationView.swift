@@ -24,26 +24,26 @@ final class StationView: UIView, StationViewProtocol {
             frame: .zero,
             collectionViewLayout: UICollectionViewFlowLayout()
         )
-
+        
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(StationHeaderlView.self)
+        collectionView.register(StationHeaderView.self)
         collectionView.register(StationCell.self)
-
+        
         return collectionView
     }()
-
+    
     init(
         frame: CGRect = .zero,
         appearance: Appearance = Appearance()
     ) {
         self.appearance = appearance
         super.init(frame: frame)
-
+        
         self.setupView()
         self.addSubviews()
         self.makeConstraints()
     }
-
+    
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -65,9 +65,9 @@ final class StationView: UIView, StationViewProtocol {
                 collectionView.collectionViewLayout.invalidateLayout()
                 activityIndicator.stopAnimating()
             }
-        
-    }
-
+            
+        }
+    
     func invalidateCollectionViewLayout() {
         self.collectionView.collectionViewLayout.invalidateLayout()
         self.invalidateIntrinsicContentSize()
@@ -79,12 +79,12 @@ extension StationView: ProgrammaticallyInitializableViewProtocol {
         backgroundColor = appearance.backgroundColor
         collectionView.backgroundColor = appearance.collectionViewBackgroundColor
     }
-
+    
     func addSubviews() {
         addSubview(collectionView)
         addSubview(activityIndicator)
     }
-
+    
     func makeConstraints() {
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

@@ -31,7 +31,8 @@ struct StationDetail: Decodable {
 }
 
 struct RoutePath: Decodable {
-    let id, routePathID, type, number: String
+    let id, routePathID, number: String
+    var type: TypeElement
     let timeArrivalSecond: [Int]
     let timeArrival: [String]
     let lastStopName: String

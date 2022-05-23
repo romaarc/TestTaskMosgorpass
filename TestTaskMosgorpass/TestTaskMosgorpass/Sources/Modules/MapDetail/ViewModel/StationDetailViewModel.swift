@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StationDetailViewModel {
+struct StationDetailViewModel: Decodable {
     let id, name, type, color: String
     let routePath: [RoutePath]
 }

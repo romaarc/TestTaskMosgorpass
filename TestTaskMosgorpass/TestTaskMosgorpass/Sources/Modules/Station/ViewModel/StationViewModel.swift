@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StationViewModel {
+struct StationViewModel: Decodable {
     let id: String
     let lat, lon: Double
     let name: String

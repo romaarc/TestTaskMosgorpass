@@ -12,6 +12,7 @@ final class MapDetailViewController: UIViewController, UIGestureRecognizerDelega
     private let stationViewModel: StationViewModel
     
     private var locationManager: CLLocationManager!
+    private var collectionViewAdapter = StationDetailCollectionViewAdapter()
     
     var stationDetailView: MapDetailView? { self.view as? MapDetailView }
     
@@ -44,6 +45,7 @@ final class MapDetailViewController: UIViewController, UIGestureRecognizerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionViewAdapter.delegate = self
         setupNavigationBar()
         setupTargetZoomButtons()
         setupLocationManager()
@@ -67,11 +69,28 @@ final class MapDetailViewController: UIViewController, UIGestureRecognizerDelega
 // MARK: - MapDetailViewController: MapDetailViewControllerProtocol -
 extension MapDetailViewController: MapDetailViewControllerProtocol {
     func displayStationDetail(viewModel: MapDetailLoad.Loading.ViewModel) {
-       
+        guard let stationDetailView = stationDetailView else { return }
+        collectionViewAdapter.components = viewModel.data.0
+        collectionViewAdapter.filters = viewModel.data.1
+        collectionViewAdapter.boundsWidth = stationDetailView.bounds.width
+        DispatchQueue.main.async {
+            stationDetailView.header.update(someText: viewModel.data.0[0].name)
+            stationDetailView.updateCollectionViewData(
+                delegate: self.collectionViewAdapter,
+                dataSource: self.collectionViewAdapter,
+                isEmptyCollectionData: false)
+        }
     }
     
     func displayError(error: MapDetailLoad.Loading.onError) {
-        
+        guard let stationDetailView = stationDetailView else { return }
+        stationDetailView.activityIndicator.startAnimating()
+        DispatchQueue.main.async {
+            stationDetailView.updateCollectionViewData(
+                delegate: self.collectionViewAdapter,
+                dataSource: self.collectionViewAdapter,
+                isEmptyCollectionData: true)
+        }
     }
 }
 
@@ -102,6 +121,7 @@ extension MapDetailViewController {
     }
     
     private func fetchStation() {
+        stationDetailView?.activityIndicator.startAnimating()
         interactor.doStationUpdate(request: .init(data: stationViewModel))
     }
     
@@ -155,4 +175,9 @@ extension MapDetailViewController: YMKLayersGeoObjectTapListener, YMKMapInputLis
     func onMapLongTap(with map: YMKMap, point: YMKPoint) {}
     
     func onObjectAdded(with view: YMKUserLocationView) {}
+}
+
+//MARK - MapDetailViewController: StationDetailCollectionViewAdapterDelegate -
+extension MapDetailViewController: StationDetailCollectionViewAdapterDelegate {
+    func stationDetailCollectionViewAdapter(_ adapter: StationDetailCollectionViewAdapter, didSelectComponentAt indexPath: IndexPath) {}
 }

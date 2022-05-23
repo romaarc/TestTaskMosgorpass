@@ -14,11 +14,22 @@ final class HeaderView: BaseView {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.tintColor = .black
-        button.backgroundColor = Colors.lightWhite
+        button.backgroundColor = .white
         button.titleLabel?.font = Font.sber(ofSize: Font.Size.twenty, weight: .bold)
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.contentHorizontalAlignment = .left
         button.contentEdgeInsets.left = 16
+        button.isUserInteractionEnabled = false
         return button
+    }()
+    
+    private let rowView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = Colors.rowFilterColor
+        view.layer.cornerRadius = 2.5
+        view.layer.masksToBounds = true
+        return view
     }()
     
     private let separator: UIView = {
@@ -29,12 +40,19 @@ final class HeaderView: BaseView {
     }()
     
     override func setupView() {
-        addSubview(button)
+        [button, rowView, separator].forEach { addSubview($0) }
     }
     
     override func setupLayout() {
         button.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        rowView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(5)
+            make.width.equalTo(36)
+            make.height.equalTo(5)
+            make.centerX.equalToSuperview()
         }
         
         separator.snp.makeConstraints { make in

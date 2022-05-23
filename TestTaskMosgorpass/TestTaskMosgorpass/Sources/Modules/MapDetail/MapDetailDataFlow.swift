@@ -7,7 +7,7 @@ enum MapDetailLoad {
         }
 
         struct ViewModel {
-            let data: StationDetailViewModel
+            let data: ([StationDetailViewModel], [[TypeElement: Int]])
         }
         
         struct onError {}

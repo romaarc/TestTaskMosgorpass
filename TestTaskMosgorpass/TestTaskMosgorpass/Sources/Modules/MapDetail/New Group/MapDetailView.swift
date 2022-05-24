@@ -10,7 +10,7 @@ extension MapDetailView {
         let shadowRadius: CGFloat = 4
         let shadowOpacity: Float = 0.2
         let shadowOffset = CGSize.zero
-        let middleInsetFromBottom: CGFloat = 280
+        let middleInsetFromBottom: CGFloat = 310
     }
 }
 

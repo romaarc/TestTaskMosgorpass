@@ -3,6 +3,7 @@ import PromiseKit
 
 protocol StationInteractorProtocol {
     func doStationsUpdate(request: StationLoad.StationUpdate.Request)
+    func doFindingDetailStation(request: StationLoad.StationUpdate.Request)
 }
 
 final class StationInteractor: StationInteractorProtocol {
@@ -20,11 +21,27 @@ final class StationInteractor: StationInteractorProtocol {
     }
     
     func doStationsUpdate(request: StationLoad.StationUpdate.Request) {
-        provider.fetch().done { stations in
+        provider.fetch().then { stations -> Promise<[Station]> in
+            self.provider.deleteObjects()
+            return .value(stations)
+        }.done { stations in
             self.presenter.presentStationsResult(response: .init(result: .success(stations)))
         }.catch { _ in
             self.presenter.presentStationsResult(response: .init(result: .failure(Error.unloadable)))
         }
+    }
+    
+    func doFindingDetailStation(request: StationLoad.StationUpdate.Request) {
+        let objects: [StationDetailRM] = provider.fetchObjects()
+        if !objects.isEmpty {
+            presenter.presentDetailStationResult(response: .init(result: .success(objects)))
+        } else {
+            doStationsUpdate(request: .init())
+        }
+    }
+    
+    func doDetailStationDelete() {
+        provider.deleteObjects()
     }
     
     enum Error: Swift.Error {

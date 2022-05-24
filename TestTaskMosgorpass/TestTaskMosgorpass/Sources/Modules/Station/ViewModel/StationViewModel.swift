@@ -23,3 +23,32 @@ struct StationViewModel: Decodable {
     let mapIconSmall: String?
     let cityShuttle, electrobus: Bool
 }
+
+extension StationViewModel {
+    init(
+        id: String,
+        lat: Double,
+        lon: Double
+    ) {
+        self.id = id
+        self.lon = lon
+        self.lat = lat
+        self.name = ""
+        self.type = .publicTransport
+        self.routeNumber = nil
+        self.color = nil
+        self.routeName = nil
+        self.subwayID = nil
+        self.shareURL = ""
+        self.wifi = false
+        self.usb = false
+        self.transportType = nil
+        self.transportTypes = [TypeElement]()
+        self.isFavorite = false
+        self.icon = nil
+        self.mapIcon = nil
+        self.mapIconSmall = nil
+        self.cityShuttle = false
+        self.electrobus = false
+    }
+}

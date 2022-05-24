@@ -12,8 +12,12 @@ final class MapDetailAssembly: Assembly {
 
     func makeModule(with context: ModuleContext?) -> UIViewController {
         guard let context = context else { return UIViewController() }
+        
         let provider = MapDetailProvider(
-            mosgorpassNetworkService: context.moduleDependencies.mosgorpassNetworkService)
+            mosgorpassNetworkService: context.moduleDependencies.mosgorpassNetworkService,
+            stationDetailRealmService: context.moduleDependencies.stationDetailRealmService
+        )
+        
         let presenter = MapDetailPresenter()
         let interactor = MapDetailInteractor(presenter: presenter, provider: provider)
         

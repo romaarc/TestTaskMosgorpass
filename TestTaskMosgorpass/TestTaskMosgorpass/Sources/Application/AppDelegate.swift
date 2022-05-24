@@ -7,6 +7,7 @@
 
 import UIKit
 import YandexMapsMobile
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         YMKMapKit.setApiKey("9386bd62-a65a-4a01-b255-9bfcc905b777")
         YMKMapKit.setLocale("ru_RU")
         YMKMapKit.sharedInstance()
+        
+        let configuration = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in }
+        )
+        Realm.Configuration.defaultConfiguration = configuration
+
+        // opening the Realm file now makes sure that the migration is performed
+        _ = try! Realm()
         return true
     }
 

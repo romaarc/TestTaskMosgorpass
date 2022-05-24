@@ -2,6 +2,7 @@ import UIKit
 
 protocol StationPresenterProtocol {
     func presentStationsResult(response: StationLoad.Loading.Response)
+    func presentDetailStationResult(response: StationLoad.StationDetailFinding.Response)
 }
 
 final class StationPresenter: StationPresenterProtocol {
@@ -47,6 +48,16 @@ final class StationPresenter: StationPresenterProtocol {
         case .failure(_):
             ///Обработать ошибку
             viewController?.displayError(error: .init())
+        }
+    }
+    
+    func presentDetailStationResult(response: StationLoad.StationDetailFinding.Response) {
+        switch response.result {
+        case .success(let result):
+            viewController?.displayDetailStation(viewModel: .init(data: result[0]))
+        case .failure(_):
+            ///Обработать ошибку
+            break
         }
     }
 }

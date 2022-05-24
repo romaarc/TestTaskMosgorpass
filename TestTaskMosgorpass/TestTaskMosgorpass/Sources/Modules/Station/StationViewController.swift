@@ -3,6 +3,7 @@ import UIKit
 protocol StationViewControllerProtocol: AnyObject {
     func displayStations(viewModel: StationLoad.Loading.ViewModel)
     func displayError(error: StationLoad.Loading.onError)
+    func displayDetailStation(viewModel: StationLoad.StationDetailFinding.ViewModel)
 }
 
 final class StationViewController: UIViewController {
@@ -42,14 +43,24 @@ final class StationViewController: UIViewController {
         super.viewWillAppear(animated)
         if navigationController?.navigationBar.isHidden == true {
             navigationController?.navigationBar.isHidden = false
+            if collectionViewAdapter.components.isEmpty {
+                stationView?.activityIndicator.startAnimating()
+                interactor.doStationsUpdate(request: .init())
+            }
         }
     }
 }
 // MARK: - StationViewController: StationViewControllerProtocol -
 extension StationViewController: StationViewControllerProtocol {
+    func displayDetailStation(viewModel: StationLoad.StationDetailFinding.ViewModel) {
+        let data = viewModel.data
+        let component = StationViewModel(id: data.id, lat: data.lat, lon: data.lon)
+        router.showDetail(with: component)
+    }
+    
     func fetchStations() {
         stationView?.activityIndicator.startAnimating()
-        interactor.doStationsUpdate(request: .init())
+        interactor.doFindingDetailStation(request: .init())
     }
     
     func displayStations(viewModel: StationLoad.Loading.ViewModel) {

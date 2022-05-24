@@ -72,6 +72,10 @@
 		BBE8610E283BFBD500C359F4 /* StationDetailCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE8610D283BFBD500C359F4 /* StationDetailCollectionViewAdapter.swift */; };
 		BBE86110283C0D2D00C359F4 /* StationDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE8610F283C0D2D00C359F4 /* StationDetailCell.swift */; };
 		BBE86112283C240100C359F4 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE86111283C240100C359F4 /* String+Extension.swift */; };
+		BBF31918283D0E1C00DC88D2 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF31917283D0E1C00DC88D2 /* RealmService.swift */; };
+		BBF3191B283D0F1600DC88D2 /* StationDetailRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3191A283D0F1600DC88D2 /* StationDetailRM.swift */; };
+		BBF3191D283D186D00DC88D2 /* RealmServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3191C283D186D00DC88D2 /* RealmServiceProtocol.swift */; };
+		BBF3191F283D1AE400DC88D2 /* RealmService+DetailStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF3191E283D1AE400DC88D2 /* RealmService+DetailStation.swift */; };
 		D73CF216285BDCD19FD945A4 /* MapDetailDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA279D9F565AD5EF23D60F6A /* MapDetailDataFlow.swift */; };
 		D82C521E56B64CBE407523B1 /* Pods_TestTaskMosgorpass_TestTaskMosgorpassUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B77BDCEECB50BB12AF9BDE7 /* Pods_TestTaskMosgorpass_TestTaskMosgorpassUITests.framework */; };
 		E3BB8908A939D3C0249364A6 /* MapDetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CB9FF033040215EC29367 /* MapDetailProvider.swift */; };
@@ -169,6 +173,10 @@
 		BBE8610D283BFBD500C359F4 /* StationDetailCollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailCollectionViewAdapter.swift; sourceTree = "<group>"; };
 		BBE8610F283C0D2D00C359F4 /* StationDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailCell.swift; sourceTree = "<group>"; };
 		BBE86111283C240100C359F4 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		BBF31917283D0E1C00DC88D2 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		BBF3191A283D0F1600DC88D2 /* StationDetailRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationDetailRM.swift; sourceTree = "<group>"; };
+		BBF3191C283D186D00DC88D2 /* RealmServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmServiceProtocol.swift; sourceTree = "<group>"; };
+		BBF3191E283D1AE400DC88D2 /* RealmService+DetailStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmService+DetailStation.swift"; sourceTree = "<group>"; };
 		C81CBD655902ACB9A89C4605 /* StationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		CB3EA417C7F9F45A2C604FD5 /* Pods-TestTaskMosgorpass.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskMosgorpass.debug.xcconfig"; path = "Target Support Files/Pods-TestTaskMosgorpass/Pods-TestTaskMosgorpass.debug.xcconfig"; sourceTree = "<group>"; };
 		CD7C02E5C3D07ABA3EECC950 /* StationDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationDataFlow.swift; sourceTree = "<group>"; };
@@ -487,6 +495,10 @@
 		BBCD720228357C230000F355 /* Persistent */ = {
 			isa = PBXGroup;
 			children = (
+				BBF31919283D0EE100DC88D2 /* Models */,
+				BBF31917283D0E1C00DC88D2 /* RealmService.swift */,
+				BBF3191E283D1AE400DC88D2 /* RealmService+DetailStation.swift */,
+				BBF3191C283D186D00DC88D2 /* RealmServiceProtocol.swift */,
 			);
 			path = Persistent;
 			sourceTree = "<group>";
@@ -538,6 +550,14 @@
 				BBCD721228357E890000F355 /* Typealias.swift */,
 			);
 			path = Typealias;
+			sourceTree = "<group>";
+		};
+		BBF31919283D0EE100DC88D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BBF3191A283D0F1600DC88D2 /* StationDetailRM.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C72C53DED1E3880AC2F6D9DC /* MapDetail */ = {
@@ -903,11 +923,14 @@
 				BBCD72212835817D0000F355 /* NetworkServiceProtocol.swift in Sources */,
 				BBCD7227283582630000F355 /* Station.swift in Sources */,
 				BB6EEEDE283A45BF003A7955 /* UIButton+Extension.swift in Sources */,
+				BBF31918283D0E1C00DC88D2 /* RealmService.swift in Sources */,
 				BBCD721F2835815F0000F355 /* NetworkService+Station.swift in Sources */,
 				0A8FEF874870FD00BE13EE8F /* StationAssembly.swift in Sources */,
+				BBF3191F283D1AE400DC88D2 /* RealmService+DetailStation.swift in Sources */,
 				AD375957B4276291DB21E803 /* StationViewController.swift in Sources */,
 				A482ED8472E93148A5F2DBBE /* StationInteractor.swift in Sources */,
 				EC81172823A2242F69299E2C /* StationPresenter.swift in Sources */,
+				BBF3191D283D186D00DC88D2 /* RealmServiceProtocol.swift in Sources */,
 				38B366F2E053121C494E27DE /* StationDataFlow.swift in Sources */,
 				B4A71B481A3C2DC995C45060 /* StationProvider.swift in Sources */,
 				BB7E2961283921E100130982 /* StationDetail.swift in Sources */,
@@ -936,6 +959,7 @@
 				BB182778283B98D200C4CA26 /* StationDetailViewModel.swift in Sources */,
 				67E18F373686283AE87243F2 /* MapDetailInputProtocol.swift in Sources */,
 				BBE86112283C240100C359F4 /* String+Extension.swift in Sources */,
+				BBF3191B283D0F1600DC88D2 /* StationDetailRM.swift in Sources */,
 				AEC31C249E1C882B1EA13FFB /* MapDetailOutputProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

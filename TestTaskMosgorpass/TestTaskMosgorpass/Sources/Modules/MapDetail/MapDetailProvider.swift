@@ -3,13 +3,20 @@ import PromiseKit
 
 protocol MapDetailProviderProtocol {
     func fetchById(withID id: String) -> Promise<StationDetail>
+    func saveIdToRealm(_ model: StationDetail)
 }
 
 final class MapDetailProvider: MapDetailProviderProtocol {
-    private let mosgorpassNetworkService: NetworkServiceProtocol
     
-    init(mosgorpassNetworkService: NetworkServiceProtocol) {
+    private let mosgorpassNetworkService: NetworkServiceProtocol
+    private let stationDetailRealmService: RealmServiceProtocol
+    
+    init(
+        mosgorpassNetworkService: NetworkServiceProtocol,
+        stationDetailRealmService: RealmServiceProtocol
+    ) {
         self.mosgorpassNetworkService = mosgorpassNetworkService
+        self.stationDetailRealmService = stationDetailRealmService
     }
     
     func fetchById(withID id: String) -> Promise<StationDetail> {
@@ -20,6 +27,15 @@ final class MapDetailProvider: MapDetailProviderProtocol {
                 seal.reject(Error.stationDetailDataFetchFailed)
             }
         }
+    }
+    
+    func saveIdToRealm(_ model: StationDetail) {
+        let station = StationDetailRM(
+            id: model.id,
+            isWasViewed: true,
+            lat: model.lat,
+            lon: model.lon)
+        stationDetailRealmService.saveDetailStation(station: station)
     }
     
     enum Error: Swift.Error {

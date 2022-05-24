@@ -3,13 +3,20 @@ import PromiseKit
 
 protocol StationProviderProtocol {
     func fetch() -> Promise<[Station]>
+    func fetchObjects() -> [StationDetailRM]
+    func deleteObjects()
 }
 
 final class StationProvider: StationProviderProtocol {
     private let mosgorpassNetworkService: NetworkServiceProtocol
+    private let stationDetailRealmService: RealmServiceProtocol
     
-    init(mosgorpassNetworkService: NetworkServiceProtocol) {
+    init(
+        mosgorpassNetworkService: NetworkServiceProtocol,
+        stationDetailRealmService: RealmServiceProtocol
+    ) {
         self.mosgorpassNetworkService = mosgorpassNetworkService
+        self.stationDetailRealmService = stationDetailRealmService
     }
     
     func fetch() -> Promise<[Station]> {
@@ -20,6 +27,14 @@ final class StationProvider: StationProviderProtocol {
                 seal.reject(Error.stationsDataFetchFailed)
             }
         }
+    }
+    
+    func fetchObjects() -> [StationDetailRM] {
+        stationDetailRealmService.getDetailStations() ?? [StationDetailRM]()
+    }
+    
+    func deleteObjects() {
+        stationDetailRealmService.deleteAll()
     }
     
     enum Error: Swift.Error {

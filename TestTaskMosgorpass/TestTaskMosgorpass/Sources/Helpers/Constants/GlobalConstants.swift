@@ -32,7 +32,7 @@ struct StationConstants {
     }
     
     struct Strings {
-        static let emptyMessage = "Не найдено станций или подключитесь к сети, чтобы загрузить данные.."
-        static let emptyDetailMessage = "Не найдено транспорта или подключитесь к сети, чтобы загрузить данные.."
+        static let emptyMessage = "Не найдено остановок или подключитесь к сети, отключите VPN, чтобы загрузить данные.."
+        static let emptyDetailMessage = "Не найдено транспорта или подключитесь к сети, отключите VPN, чтобы загрузить данные.."
     }
 }

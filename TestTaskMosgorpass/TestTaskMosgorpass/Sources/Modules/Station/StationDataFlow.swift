@@ -17,4 +17,16 @@ enum StationLoad {
     enum StationUpdate {
         struct Request {}
     }
+    
+    enum StationDetailFinding {
+        struct Response {
+            let result: Result<[StationDetailRM], Error>
+        }
+       
+        struct ViewModel {
+            let data: StationDetailRM
+        }
+        
+        struct onError {}
+    }
 }

@@ -20,11 +20,18 @@ final class MapDetailInteractor: MapDetailInteractorProtocol {
     }
     
     func doStationUpdate(request: MapDetailLoad.StationDetailUpdate.Request) {
-        provider.fetchById(withID: request.data.id).done { stationDetail in
+        provider.fetchById(withID: request.data.id).then { stationDetail -> Promise<StationDetail> in
+            self.doStationSave(stationDetail)
+            return .value(stationDetail)
+        }.done { stationDetail in
             self.presenter.presentStationResult(response: .init(result: .success(stationDetail)))
         }.catch { _ in
             self.presenter.presentStationResult(response: .init(result: .failure(Error.unloadable)))
         }
+    }
+    
+    func doStationSave(_ model: StationDetail) {
+        provider.saveIdToRealm(model)
     }
     
     enum Error: Swift.Error {

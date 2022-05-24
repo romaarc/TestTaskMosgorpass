@@ -14,7 +14,8 @@ final class StationAssembly: Assembly {
         let router = StationRouter()
         
         let provider = StationProvider(
-            mosgorpassNetworkService: context.moduleDependencies.mosgorpassNetworkService
+            mosgorpassNetworkService: context.moduleDependencies.mosgorpassNetworkService,
+            stationDetailRealmService: context.moduleDependencies.stationDetailRealmService
         )
         
         let presenter = StationPresenter()

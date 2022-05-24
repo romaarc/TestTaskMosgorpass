@@ -1,0 +1,20 @@
+PODS:
+  - UltraDrawerView (0.7.1)
+  - YandexMapsMobile (4.1.0-full)
+
+DEPENDENCIES:
+  - UltraDrawerView
+  - YandexMapsMobile (= 4.1.0-full)
+
+SPEC REPOS:
+  trunk:
+    - UltraDrawerView
+    - YandexMapsMobile
+
+SPEC CHECKSUMS:
+  UltraDrawerView: 1c44968534466a6bff965b3a7d7d64caec225d48
+  YandexMapsMobile: c145ffd0dbdbb8079fca1eb6706cf9e751b07809
+
+PODFILE CHECKSUM: d6ecd25a42f1030454553e578c07568041a14058
+
+COCOAPODS: 1.11.2

@@ -32,7 +32,7 @@
 		BB36B62128358AA700930413 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B62028358AA700930413 /* Font.swift */; };
 		BB36B624283590C300930413 /* StationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B623283590C300930413 /* StationViewModel.swift */; };
 		BB61FE67283AC56E00D22CA8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61FE66283AC56E00D22CA8 /* HeaderView.swift */; };
-		BB61FE69283AC5DC00D22CA8 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61FE68283AC5DC00D22CA8 /* BaseView.swift */; };
+		BB64810F283C39CF00AC55B9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BB64810E283C39CF00AC55B9 /* RealmSwift */; };
 		BB678E48283637FE0080968E /* StationCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E47283637FE0080968E /* StationCollectionViewAdapter.swift */; };
 		BB678E4D28363A680080968E /* BaseUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E4C28363A680080968E /* BaseUICollectionViewCell.swift */; };
 		BB678E4F28363AC30080968E /* StationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E4E28363AC30080968E /* StationCell.swift */; };
@@ -128,7 +128,6 @@
 		BB36B62028358AA700930413 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BB36B623283590C300930413 /* StationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewModel.swift; sourceTree = "<group>"; };
 		BB61FE66283AC56E00D22CA8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		BB61FE68283AC5DC00D22CA8 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		BB678E47283637FE0080968E /* StationCollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCollectionViewAdapter.swift; sourceTree = "<group>"; };
 		BB678E4C28363A680080968E /* BaseUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUICollectionViewCell.swift; sourceTree = "<group>"; };
 		BB678E4E28363AC30080968E /* StationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCell.swift; sourceTree = "<group>"; };
@@ -182,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB64810F283C39CF00AC55B9 /* RealmSwift in Frameworks */,
 				BB8A1700283AC3DD009D7F2F /* SnapKit in Frameworks */,
 				861E9D95BE6F83BA17BD3653 /* Pods_TestTaskMosgorpass.framework in Frameworks */,
 				BB8A16FD283AC3BE009D7F2F /* PromiseKit in Frameworks */,
@@ -268,7 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				BB678E4B28363A4B0080968E /* Cell */,
-				BB61FE68283AC5DC00D22CA8 /* BaseView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -617,6 +616,7 @@
 			packageProductDependencies = (
 				BB8A16FC283AC3BE009D7F2F /* PromiseKit */,
 				BB8A16FF283AC3DD009D7F2F /* SnapKit */,
+				BB64810E283C39CF00AC55B9 /* RealmSwift */,
 			);
 			productName = TestTaskMosgorpass;
 			productReference = BBCD71C028357AB00000F355 /* TestTaskMosgorpass.app */;
@@ -697,6 +697,7 @@
 			packageReferences = (
 				BB8A16FB283AC3BE009D7F2F /* XCRemoteSwiftPackageReference "PromiseKit" */,
 				BB8A16FE283AC3DD009D7F2F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				BB64810D283C39CF00AC55B9 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = BBCD71C128357AB00000F355 /* Products */;
 			projectDirPath = "";
@@ -913,7 +914,6 @@
 				1B6BDB6E5BD4F00B8C7F7DD8 /* StationView.swift in Sources */,
 				BB2205872837EFBC00BBE879 /* StationHeaderView.swift in Sources */,
 				BB36B62128358AA700930413 /* Font.swift in Sources */,
-				BB61FE69283AC5DC00D22CA8 /* BaseView.swift in Sources */,
 				BB36B61F28358A7900930413 /* UIColor+Extension.swift in Sources */,
 				BB678E5528363D1B0080968E /* ReuseIdentifier.swift in Sources */,
 				8FA54BF23EB3C88D5BCB17F8 /* StationInputProtocol.swift in Sources */,
@@ -1274,6 +1274,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BB64810D283C39CF00AC55B9 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.0;
+			};
+		};
 		BB8A16FB283AC3BE009D7F2F /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mxcl/PromiseKit";
@@ -1293,6 +1301,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BB64810E283C39CF00AC55B9 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB64810D283C39CF00AC55B9 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		BB8A16FC283AC3BE009D7F2F /* PromiseKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BB8A16FB283AC3BE009D7F2F /* XCRemoteSwiftPackageReference "PromiseKit" */;

@@ -27,7 +27,7 @@ enum TypeElement: String, Decodable, Comparable {
         case .subwayHall:
             return "Выход из метро"
         case .train:
-            return "Троллейбус"
+            return "Поезд"
         case .tram:
             return "Трамвай"
         }
@@ -44,7 +44,7 @@ enum TypeElement: String, Decodable, Comparable {
         case .subwayHall:
             return "Выходы из метро"
         case .train:
-            return "Троллейбусы"
+            return "Поезда"
         case .tram:
             return "Трамваи"
         }

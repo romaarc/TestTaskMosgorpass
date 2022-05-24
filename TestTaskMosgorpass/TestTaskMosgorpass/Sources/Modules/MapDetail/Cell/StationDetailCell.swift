@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class StationDetailCell: BaseUICollectionViewCell {
+final class StationDetailCell: BaseUICollectionViewCell {
     
     private let typeLabel: UILabel = {
         let label = UILabel()
@@ -78,12 +78,17 @@ extension StationDetailCell {
             
             nameLabel.text = viewModel.number
             
-            if let hexStringValue = UInt32(viewModel.color.dropFirst(1), radix: 16) {
-                contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+            if let color = viewModel.color {
+                if let hexStringValue = UInt32(color.dropFirst(1), radix: 16) {
+                    contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+                }
             }
-            if let hexStringValue = UInt32(viewModel.fontColor.dropFirst(1), radix: 16) {
-                nameLabel.textColor = UIColor.init(hex6: hexStringValue)
-                typeLabel.textColor = nameLabel.textColor
+            
+            if let fontColor = viewModel.fontColor {
+                if let hexStringValue = UInt32(fontColor.dropFirst(1), radix: 16) {
+                    nameLabel.textColor = UIColor.init(hex6: hexStringValue)
+                    typeLabel.textColor = nameLabel.textColor
+                }
             }
         case .mcd:
             if !viewModel.timeArrival.isEmpty {
@@ -95,12 +100,17 @@ extension StationDetailCell {
             
             nameLabel.text = viewModel.number
            
-            if let hexStringValue = UInt32(viewModel.color.dropFirst(1), radix: 16) {
-                contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+            if let color = viewModel.color {
+                if let hexStringValue = UInt32(color.dropFirst(1), radix: 16) {
+                    contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+                }
             }
-            if let hexStringValue = UInt32(viewModel.fontColor.dropFirst(1), radix: 16) {
-                nameLabel.textColor = UIColor.init(hex6: hexStringValue)
-                typeLabel.textColor = nameLabel.textColor
+            
+            if let fontColor = viewModel.fontColor {
+                if let hexStringValue = UInt32(fontColor.dropFirst(1), radix: 16) {
+                    nameLabel.textColor = UIColor.init(hex6: hexStringValue)
+                    typeLabel.textColor = nameLabel.textColor
+                }
             }
         case .publicTransport:
             if !viewModel.timeArrival.isEmpty {
@@ -112,12 +122,17 @@ extension StationDetailCell {
             
             nameLabel.text = viewModel.number
             
-            if let hexStringValue = UInt32(viewModel.color.dropFirst(1), radix: 16) {
-                contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+            if let color = viewModel.color {
+                if let hexStringValue = UInt32(color.dropFirst(1), radix: 16) {
+                    contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+                }
             }
-            if let hexStringValue = UInt32(viewModel.fontColor.dropFirst(1), radix: 16) {
-                nameLabel.textColor = UIColor.init(hex6: hexStringValue)
-                typeLabel.textColor = nameLabel.textColor
+            
+            if let fontColor = viewModel.fontColor {
+                if let hexStringValue = UInt32(fontColor.dropFirst(1), radix: 16) {
+                    nameLabel.textColor = UIColor.init(hex6: hexStringValue)
+                    typeLabel.textColor = nameLabel.textColor
+                }
             }
         case .subwayHall:
             if !viewModel.timeArrival.isEmpty {
@@ -129,29 +144,42 @@ extension StationDetailCell {
             
             nameLabel.text = viewModel.number
             
-            if let hexStringValue = UInt32(viewModel.color.dropFirst(1), radix: 16) {
-                contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+            if let color = viewModel.color {
+                if let hexStringValue = UInt32(color.dropFirst(1), radix: 16) {
+                    contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+                }
             }
-            if let hexStringValue = UInt32(viewModel.fontColor.dropFirst(1), radix: 16) {
-                nameLabel.textColor = UIColor.init(hex6: hexStringValue)
-                typeLabel.textColor = nameLabel.textColor
+            
+            if let fontColor = viewModel.fontColor {
+                if let hexStringValue = UInt32(fontColor.dropFirst(1), radix: 16) {
+                    nameLabel.textColor = UIColor.init(hex6: hexStringValue)
+                    typeLabel.textColor = nameLabel.textColor
+                }
             }
         case .train:
             if !viewModel.timeArrival.isEmpty {
                 let timeArrivalStr = viewModel.timeArrival[0]
-                typeLabel.text = "\(timeArrivalStr.arrivingForRussian(count: UInt(Int(timeArrivalStr.dropLast(4)) ?? 0)))"
+                typeLabel.text = "Отправление в \(timeArrivalStr)"
             } else {
-                typeLabel.text = "Прибыл"
+                typeLabel.text = "Поезд отправился"
             }
             
-            nameLabel.text = viewModel.number
+            nameLabel.text = "\(viewModel.number) \(viewModel.lastStopName)"
             
-            if let hexStringValue = UInt32(viewModel.color.dropFirst(1), radix: 16) {
-                contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+            if let color = viewModel.expressTypeColor {
+                if let hexStringValue = UInt32(color.dropFirst(1), radix: 16) {
+                    contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+                }
             }
-            if let hexStringValue = UInt32(viewModel.fontColor.dropFirst(1), radix: 16) {
-                nameLabel.textColor = UIColor.init(hex6: hexStringValue)
-                typeLabel.textColor = nameLabel.textColor
+            
+            if let fontColor = viewModel.fontColor {
+                if let hexStringValue = UInt32(fontColor.dropFirst(1), radix: 16) {
+                    nameLabel.textColor = UIColor.init(hex6: hexStringValue)
+                    typeLabel.textColor = nameLabel.textColor
+                }
+            } else {
+                nameLabel.textColor = .white
+                typeLabel.textColor = .white
             }
         case .tram:
             if !viewModel.timeArrival.isEmpty {
@@ -163,14 +191,18 @@ extension StationDetailCell {
            
             nameLabel.text = viewModel.number
             
-            if let hexStringValue = UInt32(viewModel.color.dropFirst(1), radix: 16) {
-                contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+            if let color = viewModel.color {
+                if let hexStringValue = UInt32(color.dropFirst(1), radix: 16) {
+                    contentView.backgroundColor = UIColor.init(hex6: hexStringValue)
+                }
             }
-            if let hexStringValue = UInt32(viewModel.fontColor.dropFirst(1), radix: 16) {
-                nameLabel.textColor = UIColor.init(hex6: hexStringValue)
-                typeLabel.textColor = nameLabel.textColor
+            
+            if let fontColor = viewModel.fontColor {
+                if let hexStringValue = UInt32(fontColor.dropFirst(1), radix: 16) {
+                    nameLabel.textColor = UIColor.init(hex6: hexStringValue)
+                    typeLabel.textColor = nameLabel.textColor
+                }
             }
         }
     }
 }
-

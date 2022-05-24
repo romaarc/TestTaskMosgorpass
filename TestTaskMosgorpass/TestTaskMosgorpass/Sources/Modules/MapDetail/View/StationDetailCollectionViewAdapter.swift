@@ -40,24 +40,12 @@ extension StationDetailCollectionViewAdapter: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var countComponents = 0
-        let dict: [TypeElement: Int] = filters[section]
-        for key in dict.keys {
-            countComponents = dict[key] ?? 0
-        }
-        return countComponents
+        components[0].routePath.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(cellType: StationDetailCell.self, for: indexPath)
-        var sectionComponents: [RoutePath] = []
-        let dict: [TypeElement: Int] = filters[indexPath.section]
-        for key in dict.keys {
-            sectionComponents = components[0].routePath.filter({$0.type == key})
-        }
-        sectionComponents = sectionComponents.sorted { Int($0.number) ?? 0 < Int($1.number) ?? 0 }
-        let component = sectionComponents[indexPath.row]
-        cell.update(withDetail: component)
+        cell.update(withDetail: components[0].routePath[indexPath.row])
         return cell
     }
     

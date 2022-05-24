@@ -8,17 +8,26 @@
 import UIKit
 import SnapKit
 
-final class HeaderView: BaseView {
+extension HeaderView {
+    struct Appearance {
+        let buttonTintColor = UIColor.black
+        let buttonBackgroundColor = UIColor.white
+        let buttonTitleLabelFont = Font.sber(ofSize: Font.Size.twenty, weight: .bold)
+        let buttonContentEdgeInsetsLeft: CGFloat = 16
+        let separatorBackgroundColor = UIColor(white: 0.8, alpha: 0.5)
+        let rowViewBackgroundColor = Colors.rowFilterColor
+        let rowViewCornerRadius = 2.5
+    }
+}
+
+final class HeaderView: UIView {
+    let appearance: Appearance
     
     private let button: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.tintColor = .black
-        button.backgroundColor = .white
-        button.titleLabel?.font = Font.sber(ofSize: Font.Size.twenty, weight: .bold)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.contentHorizontalAlignment = .left
-        button.contentEdgeInsets.left = 16
         button.isUserInteractionEnabled = false
         return button
     }()
@@ -26,8 +35,6 @@ final class HeaderView: BaseView {
     private let rowView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = Colors.rowFilterColor
-        view.layer.cornerRadius = 2.5
         view.layer.masksToBounds = true
         return view
     }()
@@ -35,15 +42,45 @@ final class HeaderView: BaseView {
     private let separator: UIView = {
         let separator = UIView()
         separator.translatesAutoresizingMaskIntoConstraints = false
-        separator.backgroundColor = UIColor(white: 0.8, alpha: 0.5)
         return separator
     }()
     
-    override func setupView() {
-        [button, rowView, separator].forEach { addSubview($0) }
+    init(
+        frame: CGRect = .zero,
+        appearance: Appearance = Appearance()
+    ) {
+        self.appearance = appearance
+        super.init(frame: frame)
+
+        self.setupView()
+        self.addSubviews()
+        self.makeConstraints()
+    }
+
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    override func setupLayout() {
+    func update(someText text: String) {
+        button.setTitle(text, for: .normal)
+    }
+}
+
+extension HeaderView: ProgrammaticallyInitializableViewProtocol {
+    func setupView() {
+        button.tintColor = appearance.buttonTintColor
+        button.backgroundColor = appearance.buttonBackgroundColor
+        button.titleLabel?.font = appearance.buttonTitleLabelFont
+        button.contentEdgeInsets.left = appearance.buttonContentEdgeInsetsLeft
+        separator.backgroundColor = appearance.separatorBackgroundColor
+        rowView.backgroundColor = appearance.rowViewBackgroundColor
+        rowView.layer.cornerRadius = appearance.rowViewCornerRadius
+    }
+    func addSubviews() {
+        [button, rowView, separator].forEach { addSubview($0) }
+    }
+    func makeConstraints() {
         button.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -59,9 +96,5 @@ final class HeaderView: BaseView {
             make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(1 / UIScreen.main.scale)
         }
-    }
-    
-    func update(someText text: String) {
-        button.setTitle(text, for: .normal)
     }
 }

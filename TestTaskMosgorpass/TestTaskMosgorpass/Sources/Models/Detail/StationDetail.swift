@@ -37,10 +37,8 @@ struct RoutePath: Decodable {
     let timeArrival: [String]
     let lastStopName: String
     let isFifa, weight, byTelemetry: Int
-    let color, fontColor: String
+    let color, fontColor, expressTypeColor: String?
     let cityShuttle, electrobus: Bool
-    let tmIDS: [Int]
-    let externalForecastTime: [ExternalForecastTime]
     let byTelemetryArray: [Int]
     let routePathIDS, feature: String?
     let sberShuttle, isFavorite: Bool
@@ -48,21 +46,9 @@ struct RoutePath: Decodable {
     enum CodingKeys: String, CodingKey {
         case id
         case routePathID = "routePathId"
-        case type, number, timeArrivalSecond, timeArrival, lastStopName, isFifa, weight, byTelemetry, color, fontColor, cityShuttle, electrobus
-        case tmIDS = "tmIds"
-        case externalForecastTime, byTelemetryArray
+        case type, number, timeArrivalSecond, timeArrival, lastStopName, isFifa, weight, byTelemetry, color, fontColor, expressTypeColor, cityShuttle, electrobus
+        case byTelemetryArray
         case routePathIDS = "routePathIds"
         case feature, sberShuttle, isFavorite
-    }
-}
-
-struct ExternalForecastTime: Decodable {
-    let time, byTelemetry, tmID: Int
-    let routePathID: String
-
-    enum CodingKeys: String, CodingKey {
-        case time, byTelemetry
-        case tmID = "tmId"
-        case routePathID = "routePathId"
     }
 }

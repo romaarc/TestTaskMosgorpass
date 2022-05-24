@@ -13,6 +13,7 @@ final class MapDetailPresenter: MapDetailPresenterProtocol {
             ///Преобразую данные во вьюмодели и делаю дикишинари для секций
             var dictTransortType = [[TypeElement: Int]]()
             var viewModels = [StationDetailViewModel]()
+            var routeSortedPath = [RoutePath]()
             let transportTypes = Array(Set(result.routePath.map { station -> TypeElement in
                 return station.type
             })).sorted()
@@ -21,12 +22,14 @@ final class MapDetailPresenter: MapDetailPresenterProtocol {
                 dictTransortType.append([type: result.routePath.filter({ $0.type == type }).count])
             }
             
+            routeSortedPath = result.routePath.sorted(by: { $0.type != .train ? Int($0.number) ?? 0 < Int($1.number) ?? 0 : $0.timeArrivalSecond[0] < $1.timeArrivalSecond[0] } )
+            
             viewModels = [result].map { stationDetail in
                 StationDetailViewModel(id: stationDetail.id,
                                        name: stationDetail.name,
                                        type: stationDetail.type,
                                        color: stationDetail.color,
-                                       routePath: stationDetail.routePath)
+                                       routePath: routeSortedPath)
             }
             viewController?.displayStationDetail(viewModel: .init(data: (viewModels, dictTransortType)))
         case .failure(_):

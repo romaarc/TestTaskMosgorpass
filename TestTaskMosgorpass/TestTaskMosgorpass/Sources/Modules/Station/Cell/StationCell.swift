@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class StationCell: BaseUICollectionViewCell {
+final class StationCell: BaseUICollectionViewCell {
     
     private let typeLabel: UILabel = {
         let label = UILabel()

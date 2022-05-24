@@ -6,7 +6,7 @@ target 'TestTaskMosgorpass' do
   use_frameworks!
   
   pod 'YandexMapsMobile', '4.1.0-full'
-  pod 'UltraDrawerView'
+  pod 'UltraDrawerView', '0.7.1'
 
   # Pods for TestTaskMosgorpass
 

@@ -1,9 +1,10 @@
 import UIKit
+import Reachability
 
 protocol StationViewControllerProtocol: AnyObject {
     func displayStations(viewModel: StationLoad.Loading.ViewModel)
     func displayError(error: StationLoad.Loading.onError)
-    func displayDetailStation(viewModel: StationLoad.StationDetailFinding.ViewModel)
+    func displayDetailStation(viewModel: StationDetailFinding.Loading.ViewModel)
 }
 
 final class StationViewController: UIViewController {
@@ -11,6 +12,8 @@ final class StationViewController: UIViewController {
     private let router: StationRouterInput
     
     var stationView: StationView? { self.view as? StationView }
+    
+    private let reachability = try! Reachability()
     
     private var collectionViewAdapter = StationCollectionViewAdapter()
     
@@ -36,11 +39,23 @@ final class StationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionViewAdapter.delegate = self
-        fetchStations()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(reachabilityChanged(note:)),
+            name: .reachabilityChanged,
+            object: reachability
+        )
+        do {
+            try reachability.startNotifier()
+        } catch{
+            print("Could not start reachability notifier")
+        }
+        
         if navigationController?.navigationBar.isHidden == true {
             navigationController?.navigationBar.isHidden = false
             if collectionViewAdapter.components.isEmpty {
@@ -49,10 +64,15 @@ final class StationViewController: UIViewController {
             }
         }
     }
+    
+    deinit {
+        reachability.stopNotifier()
+        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
+    }
 }
 // MARK: - StationViewController: StationViewControllerProtocol -
 extension StationViewController: StationViewControllerProtocol {
-    func displayDetailStation(viewModel: StationLoad.StationDetailFinding.ViewModel) {
+    func displayDetailStation(viewModel: StationDetailFinding.Loading.ViewModel) {
         let data = viewModel.data
         let component = StationViewModel(
             id: data.id,
@@ -88,6 +108,23 @@ extension StationViewController: StationViewControllerProtocol {
                 delegate: self.collectionViewAdapter,
                 dataSource: self.collectionViewAdapter,
                 isEmptyCollectionData: true)
+        }
+    }
+    
+    @objc
+    func reachabilityChanged(note: Notification) {
+        let reachability = note.object as! Reachability
+        switch reachability.connection {
+        case .wifi, .cellular:
+            if collectionViewAdapter.components.isEmpty {
+                fetchStations()
+            }
+        case .unavailable:
+            if collectionViewAdapter.components.isEmpty {
+                displayError(error: .init())
+            }
+        case .none:
+            break
         }
     }
 }

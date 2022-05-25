@@ -23,6 +23,7 @@
 		AD375957B4276291DB21E803 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81CBD655902ACB9A89C4605 /* StationViewController.swift */; };
 		AEC31C249E1C882B1EA13FFB /* MapDetailOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A05FD802B31984D684C889B /* MapDetailOutputProtocol.swift */; };
 		B4A71B481A3C2DC995C45060 /* StationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C33A4F1B4AC1F553133BE9 /* StationProvider.swift */; };
+		BB058D52283E2838006B9C6C /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = BB058D51283E2838006B9C6C /* Reachability */; };
 		BB182778283B98D200C4CA26 /* StationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB182777283B98D200C4CA26 /* StationDetailViewModel.swift */; };
 		BB2205842837EED100BBE879 /* BaseUICollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2205832837EED100BBE879 /* BaseUICollectionReusableView.swift */; };
 		BB2205872837EFBC00BBE879 /* StationHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB2205862837EFBC00BBE879 /* StationHeaderView.swift */; };
@@ -191,6 +192,7 @@
 			files = (
 				BB64810F283C39CF00AC55B9 /* RealmSwift in Frameworks */,
 				BB8A1700283AC3DD009D7F2F /* SnapKit in Frameworks */,
+				BB058D52283E2838006B9C6C /* Reachability in Frameworks */,
 				861E9D95BE6F83BA17BD3653 /* Pods_TestTaskMosgorpass.framework in Frameworks */,
 				BB8A16FD283AC3BE009D7F2F /* PromiseKit in Frameworks */,
 			);
@@ -637,6 +639,7 @@
 				BB8A16FC283AC3BE009D7F2F /* PromiseKit */,
 				BB8A16FF283AC3DD009D7F2F /* SnapKit */,
 				BB64810E283C39CF00AC55B9 /* RealmSwift */,
+				BB058D51283E2838006B9C6C /* Reachability */,
 			);
 			productName = TestTaskMosgorpass;
 			productReference = BBCD71C028357AB00000F355 /* TestTaskMosgorpass.app */;
@@ -718,6 +721,7 @@
 				BB8A16FB283AC3BE009D7F2F /* XCRemoteSwiftPackageReference "PromiseKit" */,
 				BB8A16FE283AC3DD009D7F2F /* XCRemoteSwiftPackageReference "SnapKit" */,
 				BB64810D283C39CF00AC55B9 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				BB058D50283E2838006B9C6C /* XCRemoteSwiftPackageReference "Reachability" */,
 			);
 			productRefGroup = BBCD71C128357AB00000F355 /* Products */;
 			projectDirPath = "";
@@ -1298,6 +1302,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		BB058D50283E2838006B9C6C /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 		BB64810D283C39CF00AC55B9 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -1325,6 +1337,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		BB058D51283E2838006B9C6C /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BB058D50283E2838006B9C6C /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
 		BB64810E283C39CF00AC55B9 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BB64810D283C39CF00AC55B9 /* XCRemoteSwiftPackageReference "realm-swift" */;

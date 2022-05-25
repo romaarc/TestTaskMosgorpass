@@ -13,7 +13,7 @@ extension HeaderView {
         let buttonTintColor = UIColor.black
         let buttonBackgroundColor = UIColor.white
         let buttonTitleLabelFont = Font.sber(ofSize: Font.Size.twenty, weight: .bold)
-        let buttonContentEdgeInsetsLeft: CGFloat = 16
+        let buttonContentEdgeInsetsLeft: CGFloat = 10
         let separatorBackgroundColor = UIColor(white: 0.8, alpha: 0.5)
         let rowViewBackgroundColor = Colors.rowFilterColor
         let rowViewCornerRadius = 2.5
@@ -63,7 +63,7 @@ final class HeaderView: UIView {
     }
     
     func update(someText text: String) {
-        button.setTitle(text, for: .normal)
+        button.setTitle("Остановка - \(text)", for: .normal)
     }
 }
 

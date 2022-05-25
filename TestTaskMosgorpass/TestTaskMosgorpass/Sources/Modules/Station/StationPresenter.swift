@@ -2,7 +2,7 @@ import UIKit
 
 protocol StationPresenterProtocol {
     func presentStationsResult(response: StationLoad.Loading.Response)
-    func presentDetailStationResult(response: StationLoad.StationDetailFinding.Response)
+    func presentDetailStationResult(response: StationDetailFinding.Loading.Response)
 }
 
 final class StationPresenter: StationPresenterProtocol {
@@ -51,7 +51,7 @@ final class StationPresenter: StationPresenterProtocol {
         }
     }
     
-    func presentDetailStationResult(response: StationLoad.StationDetailFinding.Response) {
+    func presentDetailStationResult(response: StationDetailFinding.Loading.Response) {
         switch response.result {
         case .success(let result):
             viewController?.displayDetailStation(viewModel: .init(data: result[0]))

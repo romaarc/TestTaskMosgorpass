@@ -1,6 +1,7 @@
 import UIKit
 import YandexMapsMobile
 import CoreLocation
+import Reachability
 
 protocol MapDetailViewControllerProtocol: AnyObject {
     func displayStationDetail(viewModel: MapDetailLoad.Loading.ViewModel)
@@ -10,6 +11,7 @@ protocol MapDetailViewControllerProtocol: AnyObject {
 final class MapDetailViewController: UIViewController, UIGestureRecognizerDelegate {
     private let interactor: MapDetailInteractorProtocol
     private let stationViewModel: StationViewModel
+    private let reachability = try! Reachability()
     
     private var locationManager: CLLocationManager!
     private var collectionViewAdapter = StationDetailCollectionViewAdapter()
@@ -50,11 +52,23 @@ final class MapDetailViewController: UIViewController, UIGestureRecognizerDelega
         setupTargetZoomButtons()
         setupLocationManager()
         configureMap()
-        fetchStation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(reachabilityChanged(note:)),
+            name: .reachabilityChanged,
+            object: reachability
+        )
+        do {
+            try reachability.startNotifier()
+        } catch{
+            print("Could not start reachability notifier")
+        }
+        
         if navigationController?.navigationBar.isHidden == false {
             navigationController?.navigationBar.isHidden = true
         }
@@ -152,6 +166,23 @@ extension MapDetailViewController {
                     tilt: 0),
                 animationType: YMKAnimation(type: .smooth, duration: 0.3),
                 cameraCallback: nil)
+        }
+    }
+    
+    @objc
+    func reachabilityChanged(note: Notification) {
+        let reachability = note.object as! Reachability
+        switch reachability.connection {
+        case .wifi, .cellular:
+            if collectionViewAdapter.components.isEmpty {
+                fetchStation()
+            }
+        case .unavailable:
+            if collectionViewAdapter.components.isEmpty {
+                displayError(error: .init())
+            }
+        case .none:
+            break
         }
     }
 }

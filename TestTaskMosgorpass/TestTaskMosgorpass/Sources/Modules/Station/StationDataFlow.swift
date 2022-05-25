@@ -13,16 +13,20 @@ enum StationLoad {
         
         struct onError {}
     }
+    
     /// Update stations
     enum StationUpdate {
         struct Request {}
     }
-    
-    enum StationDetailFinding {
+}
+
+enum StationDetailFinding {
+    ///Show station detail data
+    enum Loading {
         struct Response {
             let result: Result<[StationDetailRM], Error>
         }
-       
+        
         struct ViewModel {
             let data: StationDetailRM
         }

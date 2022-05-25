@@ -26,7 +26,7 @@
 ## Deployment Target
 iOS 13
 ## Архитектура приложения
-**Clean Swift + Services (URLSession PromiseKit version)**<br>
+**Clean Swift + Services (Realm + URLSession PromiseKit version)**<br>
 ## UI
 **UIKit without Storyboard and Xibs, only layout with code**<br>
 ## Unit-Tests code coverage

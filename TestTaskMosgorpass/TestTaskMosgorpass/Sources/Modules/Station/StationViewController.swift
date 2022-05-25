@@ -54,7 +54,11 @@ final class StationViewController: UIViewController {
 extension StationViewController: StationViewControllerProtocol {
     func displayDetailStation(viewModel: StationLoad.StationDetailFinding.ViewModel) {
         let data = viewModel.data
-        let component = StationViewModel(id: data.id, lat: data.lat, lon: data.lon)
+        let component = StationViewModel(
+            id: data.id,
+            lat: data.lat,
+            lon: data.lon
+        )
         router.showDetail(with: component)
     }
     

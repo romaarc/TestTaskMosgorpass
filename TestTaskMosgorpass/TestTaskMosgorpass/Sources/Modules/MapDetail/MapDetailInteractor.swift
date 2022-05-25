@@ -21,6 +21,7 @@ final class MapDetailInteractor: MapDetailInteractorProtocol {
     
     func doStationUpdate(request: MapDetailLoad.StationDetailUpdate.Request) {
         provider.fetchById(withID: request.data.id).then { stationDetail -> Promise<StationDetail> in
+            self.provider.deleteObjects()
             self.doStationSave(stationDetail)
             return .value(stationDetail)
         }.done { stationDetail in

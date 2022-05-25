@@ -4,6 +4,7 @@ import PromiseKit
 protocol MapDetailProviderProtocol {
     func fetchById(withID id: String) -> Promise<StationDetail>
     func saveIdToRealm(_ model: StationDetail)
+    func deleteObjects()
 }
 
 final class MapDetailProvider: MapDetailProviderProtocol {
@@ -36,6 +37,10 @@ final class MapDetailProvider: MapDetailProviderProtocol {
             lat: model.lat,
             lon: model.lon)
         stationDetailRealmService.saveDetailStation(station: station)
+    }
+    
+    func deleteObjects() {
+        stationDetailRealmService.deleteAll()
     }
     
     enum Error: Swift.Error {

@@ -61,8 +61,14 @@ final class StationViewController: UIViewController {
             if collectionViewAdapter.components.isEmpty {
                 stationView?.activityIndicator.startAnimating()
                 interactor.doStationsUpdate(request: .init())
+            } else {
+                interactor.doDetailStationDelete(request: .init())
             }
         }
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        .portrait
     }
     
     deinit {

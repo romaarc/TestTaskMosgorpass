@@ -78,6 +78,10 @@ final class MapDetailViewController: UIViewController, UIGestureRecognizerDelega
     private func setupNavigationBar() {
         navigationController?.navigationBar.isHidden = true
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        .portrait
+    }
 }
 
 // MARK: - MapDetailViewController: MapDetailViewControllerProtocol -

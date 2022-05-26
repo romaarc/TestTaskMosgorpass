@@ -13,6 +13,8 @@ target 'TestTaskMosgorpass' do
   target 'TestTaskMosgorpassTests' do
     inherit! :search_paths
     # Pods for testing
+	pod 'Quick', '5.0.1'
+    	pod 'Nimble', '10.0.0'
   end
 
   target 'TestTaskMosgorpassUITests' do

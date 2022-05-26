@@ -32,6 +32,14 @@
 		BB36B61F28358A7900930413 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B61E28358A7900930413 /* UIColor+Extension.swift */; };
 		BB36B62128358AA700930413 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B62028358AA700930413 /* Font.swift */; };
 		BB36B624283590C300930413 /* StationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB36B623283590C300930413 /* StationViewModel.swift */; };
+		BB492B25283E885700BA03E2 /* StationProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB492B24283E885700BA03E2 /* StationProviderSpec.swift */; };
+		BB492B27283E89C800BA03E2 /* StationPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB492B26283E89C800BA03E2 /* StationPresenterSpec.swift */; };
+		BB492B29283E8F4000BA03E2 /* StationInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB492B28283E8F4000BA03E2 /* StationInteractorSpec.swift */; };
+		BB492B2B283E92A800BA03E2 /* StationViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB492B2A283E92A800BA03E2 /* StationViewControllerSpec.swift */; };
+		BB492B2D283E953400BA03E2 /* MapDetailViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB492B2C283E953400BA03E2 /* MapDetailViewControllerSpec.swift */; };
+		BB492B2F283E954500BA03E2 /* MapDetailInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB492B2E283E954500BA03E2 /* MapDetailInteractorSpec.swift */; };
+		BB492B31283E955800BA03E2 /* MapDetailPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB492B30283E955800BA03E2 /* MapDetailPresenterSpec.swift */; };
+		BB492B33283E956900BA03E2 /* MapDetailProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB492B32283E956900BA03E2 /* MapDetailProviderSpec.swift */; };
 		BB61FE67283AC56E00D22CA8 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB61FE66283AC56E00D22CA8 /* HeaderView.swift */; };
 		BB64810F283C39CF00AC55B9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BB64810E283C39CF00AC55B9 /* RealmSwift */; };
 		BB678E48283637FE0080968E /* StationCollectionViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678E47283637FE0080968E /* StationCollectionViewAdapter.swift */; };
@@ -52,7 +60,6 @@
 		BBCD71C628357AB00000F355 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD71C528357AB00000F355 /* SceneDelegate.swift */; };
 		BBCD71CD28357AB20000F355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBCD71CC28357AB20000F355 /* Assets.xcassets */; };
 		BBCD71D028357AB20000F355 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBCD71CE28357AB20000F355 /* LaunchScreen.storyboard */; };
-		BBCD71DB28357AB20000F355 /* TestTaskMosgorpassTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD71DA28357AB20000F355 /* TestTaskMosgorpassTests.swift */; };
 		BBCD71E528357AB20000F355 /* TestTaskMosgorpassUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD71E428357AB20000F355 /* TestTaskMosgorpassUITests.swift */; };
 		BBCD71E728357AB20000F355 /* TestTaskMosgorpassUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD71E628357AB20000F355 /* TestTaskMosgorpassUITestsLaunchTests.swift */; };
 		BBCD71FC28357C000000F355 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCD71FB28357C000000F355 /* AppCoordinator.swift */; };
@@ -132,6 +139,14 @@
 		BB36B61E28358A7900930413 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		BB36B62028358AA700930413 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		BB36B623283590C300930413 /* StationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewModel.swift; sourceTree = "<group>"; };
+		BB492B24283E885700BA03E2 /* StationProviderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationProviderSpec.swift; sourceTree = "<group>"; };
+		BB492B26283E89C800BA03E2 /* StationPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationPresenterSpec.swift; sourceTree = "<group>"; };
+		BB492B28283E8F4000BA03E2 /* StationInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInteractorSpec.swift; sourceTree = "<group>"; };
+		BB492B2A283E92A800BA03E2 /* StationViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationViewControllerSpec.swift; sourceTree = "<group>"; };
+		BB492B2C283E953400BA03E2 /* MapDetailViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewControllerSpec.swift; sourceTree = "<group>"; };
+		BB492B2E283E954500BA03E2 /* MapDetailInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailInteractorSpec.swift; sourceTree = "<group>"; };
+		BB492B30283E955800BA03E2 /* MapDetailPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailPresenterSpec.swift; sourceTree = "<group>"; };
+		BB492B32283E956900BA03E2 /* MapDetailProviderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailProviderSpec.swift; sourceTree = "<group>"; };
 		BB61FE66283AC56E00D22CA8 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		BB678E47283637FE0080968E /* StationCollectionViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCollectionViewAdapter.swift; sourceTree = "<group>"; };
 		BB678E4C28363A680080968E /* BaseUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUICollectionViewCell.swift; sourceTree = "<group>"; };
@@ -152,7 +167,6 @@
 		BBCD71CF28357AB20000F355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BBCD71D128357AB20000F355 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBCD71D628357AB20000F355 /* TestTaskMosgorpassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTaskMosgorpassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBCD71DA28357AB20000F355 /* TestTaskMosgorpassTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTaskMosgorpassTests.swift; sourceTree = "<group>"; };
 		BBCD71E028357AB20000F355 /* TestTaskMosgorpassUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestTaskMosgorpassUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCD71E428357AB20000F355 /* TestTaskMosgorpassUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTaskMosgorpassUITests.swift; sourceTree = "<group>"; };
 		BBCD71E628357AB20000F355 /* TestTaskMosgorpassUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTaskMosgorpassUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -255,6 +269,37 @@
 				BB678E562836425E0080968E /* StationViewProtocol.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BB492B21283E880E00BA03E2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BB492B22283E881B00BA03E2 /* Station */,
+				BB492B23283E882300BA03E2 /* MapDetail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BB492B22283E881B00BA03E2 /* Station */ = {
+			isa = PBXGroup;
+			children = (
+				BB492B2A283E92A800BA03E2 /* StationViewControllerSpec.swift */,
+				BB492B28283E8F4000BA03E2 /* StationInteractorSpec.swift */,
+				BB492B26283E89C800BA03E2 /* StationPresenterSpec.swift */,
+				BB492B24283E885700BA03E2 /* StationProviderSpec.swift */,
+			);
+			path = Station;
+			sourceTree = "<group>";
+		};
+		BB492B23283E882300BA03E2 /* MapDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BB492B2C283E953400BA03E2 /* MapDetailViewControllerSpec.swift */,
+				BB492B2E283E954500BA03E2 /* MapDetailInteractorSpec.swift */,
+				BB492B30283E955800BA03E2 /* MapDetailPresenterSpec.swift */,
+				BB492B32283E956900BA03E2 /* MapDetailProviderSpec.swift */,
+			);
+			path = MapDetail;
 			sourceTree = "<group>";
 		};
 		BB678E462836379D0080968E /* ViewModel */ = {
@@ -370,7 +415,7 @@
 		BBCD71D928357AB20000F355 /* TestTaskMosgorpassTests */ = {
 			isa = PBXGroup;
 			children = (
-				BBCD71DA28357AB20000F355 /* TestTaskMosgorpassTests.swift */,
+				BB492B21283E880E00BA03E2 /* Modules */,
 			);
 			path = TestTaskMosgorpassTests;
 			sourceTree = "<group>";
@@ -653,6 +698,7 @@
 				BBCD71D228357AB20000F355 /* Sources */,
 				BBCD71D328357AB20000F355 /* Frameworks */,
 				BBCD71D428357AB20000F355 /* Resources */,
+				4C673909BC011605B8D63038 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -700,6 +746,7 @@
 					};
 					BBCD71D528357AB20000F355 = {
 						CreatedOnToolsVersion = 13.4;
+						LastSwiftMigration = 1340;
 						TestTargetID = BBCD71BF28357AB00000F355;
 					};
 					BBCD71DF28357AB20000F355 = {
@@ -800,6 +847,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestTaskMosgorpass/Pods-TestTaskMosgorpass-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C673909BC011605B8D63038 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTaskMosgorpassTests/Pods-TestTaskMosgorpassTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTaskMosgorpassTests/Pods-TestTaskMosgorpassTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestTaskMosgorpassTests/Pods-TestTaskMosgorpassTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8C02ABD32832C7DE0B6698C6 /* [CP] Embed Pods Frameworks */ = {
@@ -972,7 +1036,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBCD71DB28357AB20000F355 /* TestTaskMosgorpassTests.swift in Sources */,
+				BB492B2D283E953400BA03E2 /* MapDetailViewControllerSpec.swift in Sources */,
+				BB492B2F283E954500BA03E2 /* MapDetailInteractorSpec.swift in Sources */,
+				BB492B31283E955800BA03E2 /* MapDetailPresenterSpec.swift in Sources */,
+				BB492B27283E89C800BA03E2 /* StationPresenterSpec.swift in Sources */,
+				BB492B29283E8F4000BA03E2 /* StationInteractorSpec.swift in Sources */,
+				BB492B33283E956900BA03E2 /* MapDetailProviderSpec.swift in Sources */,
+				BB492B2B283E92A800BA03E2 /* StationViewControllerSpec.swift in Sources */,
+				BB492B25283E885700BA03E2 /* StationProviderSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1137,10 +1208,12 @@
 				DEVELOPMENT_TEAM = PY9YPV5R98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestTaskMosgorpass/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app would like to use your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortraitUpsideDown;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1166,10 +1239,12 @@
 				DEVELOPMENT_TEAM = PY9YPV5R98;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TestTaskMosgorpass/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app would like to use your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortraitUpsideDown;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1190,14 +1265,21 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = RGK.TestTaskMosgorpassTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TestTaskMosgorpass.app/TestTaskMosgorpass";
@@ -1210,10 +1292,16 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = RGK.TestTaskMosgorpassTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

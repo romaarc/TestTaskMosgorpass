@@ -1,20 +1,28 @@
 PODS:
+  - Nimble (10.0.0)
+  - Quick (5.0.1)
   - UltraDrawerView (0.7.1)
   - YandexMapsMobile (4.1.0-full)
 
 DEPENDENCIES:
-  - UltraDrawerView
+  - Nimble (= 10.0.0)
+  - Quick (= 5.0.1)
+  - UltraDrawerView (= 0.7.1)
   - YandexMapsMobile (= 4.1.0-full)
 
 SPEC REPOS:
   trunk:
+    - Nimble
+    - Quick
     - UltraDrawerView
     - YandexMapsMobile
 
 SPEC CHECKSUMS:
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
+  Quick: 749aa754fd1e7d984f2000fe051e18a3a9809179
   UltraDrawerView: 1c44968534466a6bff965b3a7d7d64caec225d48
   YandexMapsMobile: c145ffd0dbdbb8079fca1eb6706cf9e751b07809
 
-PODFILE CHECKSUM: d6ecd25a42f1030454553e578c07568041a14058
+PODFILE CHECKSUM: 0c439669642583bf66f58022c118d283018180bc
 
 COCOAPODS: 1.11.2

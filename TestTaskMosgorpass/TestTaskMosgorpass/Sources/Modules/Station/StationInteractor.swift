@@ -4,6 +4,7 @@ import PromiseKit
 protocol StationInteractorProtocol {
     func doStationsUpdate(request: StationLoad.StationUpdate.Request)
     func doFindingDetailStation(request: StationLoad.StationUpdate.Request)
+    func doDetailStationDelete(request: StationLoad.StationUpdate.Request) 
 }
 
 final class StationInteractor: StationInteractorProtocol {
@@ -40,7 +41,7 @@ final class StationInteractor: StationInteractorProtocol {
         }
     }
     
-    func doDetailStationDelete() {
+    func doDetailStationDelete(request: StationLoad.StationUpdate.Request) {
         provider.deleteObjects()
     }
     

@@ -12,7 +12,7 @@ import YandexMapsMobile
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        YMKMapKit.setApiKey("9386bd62-a65a-4a01-b255-9bfcc905b777")
+        YMKMapKit.setApiKey("")
         YMKMapKit.setLocale("ru_RU")
         YMKMapKit.sharedInstance()
         return true

@@ -11,6 +11,7 @@
 ![hippo](https://media.giphy.com/media/SYiliZGVSXhlZKPGch/giphy.gif)
 
 ## Установка
+Установить свой API ключ для Яндекс карт в AppDelegate, получить ключ можно здесь <a href="https://yandex.ru/dev/maps/mapkit/doc/ios-quickstart/concepts/ios/quickstart.html">документация Яндекс карт</a>
 
 У вас должны быть установлены SPM:
 * <a href="https://github.com/SnapKit/SnapKit">SnapKit</a>

@@ -77,7 +77,7 @@ extension MapDetailPresenterSpec {
         }
 
         var displayError = false
-        func displayError(error: MapDetailLoad.Loading.onError) {
+        func displayError(error: MapDetailLoad.Loading.OnError) {
             displayError = true
         }
     }

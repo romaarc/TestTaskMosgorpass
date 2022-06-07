@@ -11,7 +11,7 @@ enum StationLoad {
             let data: ([StationViewModel], [[TypeElement: Int]])
         }
         
-        struct onError {}
+        struct OnError {}
     }
     
     /// Update stations

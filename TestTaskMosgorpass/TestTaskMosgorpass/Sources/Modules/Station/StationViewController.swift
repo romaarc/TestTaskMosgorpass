@@ -3,7 +3,7 @@ import Reachability
 
 protocol StationViewControllerProtocol: AnyObject {
     func displayStations(viewModel: StationLoad.Loading.ViewModel)
-    func displayError(error: StationLoad.Loading.onError)
+    func displayError(error: StationLoad.Loading.OnError)
     func displayDetailStation(viewModel: StationDetailFinding.Loading.ViewModel)
 }
 
@@ -106,7 +106,7 @@ extension StationViewController: StationViewControllerProtocol {
         }
     }
     
-    func displayError(error: StationLoad.Loading.onError) {
+    func displayError(error: StationLoad.Loading.OnError) {
         guard let stationView = stationView else { return }
         stationView.activityIndicator.startAnimating()
         DispatchQueue.main.async {

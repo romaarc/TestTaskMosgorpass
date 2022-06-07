@@ -110,7 +110,7 @@ extension StationPresenterSpec {
         }
 
         var displayError = false
-        func displayError(error: StationLoad.Loading.onError) {
+        func displayError(error: StationLoad.Loading.OnError) {
             displayError = true
         }
 

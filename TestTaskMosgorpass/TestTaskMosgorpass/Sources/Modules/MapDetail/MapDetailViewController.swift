@@ -5,7 +5,7 @@ import Reachability
 
 protocol MapDetailViewControllerProtocol: AnyObject {
     func displayStationDetail(viewModel: MapDetailLoad.Loading.ViewModel)
-    func displayError(error: MapDetailLoad.Loading.onError)
+    func displayError(error: MapDetailLoad.Loading.OnError)
 }
 
 final class MapDetailViewController: UIViewController, UIGestureRecognizerDelegate {
@@ -100,7 +100,7 @@ extension MapDetailViewController: MapDetailViewControllerProtocol {
         }
     }
     
-    func displayError(error: MapDetailLoad.Loading.onError) {
+    func displayError(error: MapDetailLoad.Loading.OnError) {
         guard let stationDetailView = stationDetailView else { return }
         stationDetailView.activityIndicator.startAnimating()
         DispatchQueue.main.async {

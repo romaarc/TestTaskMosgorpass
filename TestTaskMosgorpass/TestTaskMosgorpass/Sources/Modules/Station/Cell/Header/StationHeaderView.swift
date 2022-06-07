@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class StationHeaderView: BaseUICollectionReusableView {
+final class StationHeaderView: BaseUICollectionReusableView {
     
     private let label: UILabel = {
         let label = UILabel()
